@@ -1,0 +1,59 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+metals = {
+    "default":{"v":0.8,"D":5.0,"k":1e-5},
+}
+models_result = {
+
+}
+
+# Rainfall-runoff (SCS-CN)
+# Q - direct runoff depth (mm)
+# P - rainfall depth
+# CN - curve number from land cover / soil group)
+def scs_runoff(P, CN):
+    S = (25400 / CN) - 254
+    Q = np.where(P > 0.2*S, (P - 0.2*S)**2 / (P + 0.8*S), 0)
+    return Q
+# Hydraulic parameters (Manning's eq.)
+def manning_velocity(n, R, S0):
+    return (1/n) * R**(2/3) * S0**0.5
+# 1D Advection-Dispersion-Reaction solver (explicit FD)
+def adr_model(C0, v, D, k, S_source, dx, dt, nx, nt):
+    C = np.zeros((nt, nx))
+    C[0, :] = C0
+    for t in range(1, nt):
+        C_prev = C[t-1, :]
+        dCdx = np.gradient(C_prev, dx)
+        d2Cdx2 = np.gradient(dCdx, dx)
+        C[t, 1:-1] = (C_prev[1:-1]
+            + dt * (D * d2Cdx2[1:-1]
+            - v * dCdx[1:-1]
+            - k * C_prev[1:-1]
+            + S_source[t, 1:-1]))
+        C[t, 0] = C[t, 1] # boundary conditions
+        C[t, -1] = C[t, -2]
+    return C
+# Example monsoon pulse source term
+def monsoon_source(nt, nx, source_node, peak_time, magnitude, duration):
+    S = np.zeros((nt, nx))
+    t_arr = np.arange(nt)
+    pulse = magnitude * np.exp(-((t_arr - peak_time)**2) / (2*(duration/2.355)**2))
+    S[:, source_node] = pulse
+    return S
+# Run example scenario
+nx, nt = 200, 500
+dx, dt = 50, 10 # meters, seconds
+#v, D, k = 0.8, 5.0, 1e-5
+for key, m in metals.items():
+    C0 = np.zeros(nx)
+    S_source = monsoon_source(nt, nx, source_node=5, peak_time=100, magnitude=0.02, duration=50)
+    models_result[key] = adr_model(C0, m["v"], m["D"], m["k"], S_source, dx, dt, nx, nt)
+plt.imshow(models_result["default"].T, aspect='auto', origin='lower', cmap='inferno',
+    extent=[0, nt*dt/3600, 0, nx*dx/1000])
+plt.xlabel("Time (hours)")
+plt.ylabel("Distance downstream (km)")
+plt.colorbar(label="Concentration (mg/L)")
+plt.title("Simulated Heavy Metal Dispersion During Monsoon Event")
+plt.show()
