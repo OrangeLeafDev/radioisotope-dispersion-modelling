@@ -22,7 +22,6 @@ def manning_velocity(n, R, S0):
 def adr_model(C0, v, D, k, S_source, dx, dt, nx, nt):
     C = np.zeros((nt, nx))
     C[0] = C0
-
     for t in range(1, nt):
         prev = C[t-1]
         C[t, 1:-1] = prev[1:-1] + dt * (
@@ -33,7 +32,6 @@ def adr_model(C0, v, D, k, S_source, dx, dt, nx, nt):
         )
         C[t, 0] = C[t, 1]
         C[t, -1] = C[t, -2]
-
     return C
 # Example monsoon pulse source term
 def monsoon_source(nt, nx, source_node, peak_time, magnitude, duration):
@@ -48,11 +46,9 @@ def rainfall_source(rainfall, CN, nx, source_node, release_factor):
     source = np.zeros((len(rainfall), nx))
     source[:, source_node] = runoff * release_factor
     return source
-
 # Run example scenario
 nx, nt = 200, 500
 dx, dt = 50, 10 # meters, seconds
-
 rainfall = np.zeros(nt)  # mm per timestep
 rainfall[95:106] = 20    # Example: 20 mm per timestep during a storm
 CN = 80                  # Placeholder curve number
@@ -73,6 +69,26 @@ for name, m in metals.items():
         np.argmin(result), result.shape
     ))
     print("Minimum source value:", source.min())
+
+
+
+fig, axes = plt.subplots(1, len(models_result), figsize=(6*len(models_result), 4))
+axes = np.atleast_1d(axes)
+
+for ax, (name, result) in zip(axes, models_result.items()):
+    im = ax.imshow(
+        result.T, aspect="auto", origin="lower", cmap="inferno",
+        extent=[0, nt*dt/3600, 0, nx*dx/1000],
+        vmin=0
+    )
+    ax.set_title(name)
+    ax.set_xlabel("Time (hours)")
+    ax.set_ylabel("Distance downstream (km)")
+    fig.colorbar(im, ax=ax, label="Concentration (mg/L)")
+
+plt.tight_layout()
+plt.show()
+"""
 plt.imshow(models_result["Nickel (Ni)"].T, aspect='auto', origin='lower', cmap='inferno',
     extent=[0, nt*dt/3600, 0, nx*dx/1000])
 plt.xlabel("Time (hours)")
@@ -80,3 +96,4 @@ plt.ylabel("Distance downstream (km)")
 plt.colorbar(label="Concentration (mg/L)")
 plt.title("Simulated Heavy Metal Dispersion During Monsoon Event")
 plt.show()
+"""
