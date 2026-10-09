@@ -2,11 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 metals = {
-    "default":{"v":0.8,"D":5.0,"k":1e-5},
+    "Nickel (Ni)": {"v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002},
+    "Chromium (Cr)": {"v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002},
 }
-models_result = {
-
-}
+models_result = {}
 
 # Rainfall-runoff (SCS-CN)
 # Q - direct runoff depth (mm)
@@ -22,18 +21,19 @@ def manning_velocity(n, R, S0):
 # 1D Advection-Dispersion-Reaction solver (explicit FD)
 def adr_model(C0, v, D, k, S_source, dx, dt, nx, nt):
     C = np.zeros((nt, nx))
-    C[0, :] = C0
+    C[0] = C0
+
     for t in range(1, nt):
-        C_prev = C[t-1, :]
-        dCdx = np.gradient(C_prev, dx)
-        d2Cdx2 = np.gradient(dCdx, dx)
-        C[t, 1:-1] = (C_prev[1:-1]
-            + dt * (D * d2Cdx2[1:-1]
-            - v * dCdx[1:-1]
-            - k * C_prev[1:-1]
-            + S_source[t, 1:-1]))
-        C[t, 0] = C[t, 1] # boundary conditions
+        prev = C[t-1]
+        C[t, 1:-1] = prev[1:-1] + dt * (
+            D * (prev[2:] - 2*prev[1:-1] + prev[:-2]) / dx**2
+            - v * (prev[1:-1] - prev[:-2]) / dx
+            - k * prev[1:-1]
+            + S_source[t, 1:-1]
+        )
+        C[t, 0] = C[t, 1]
         C[t, -1] = C[t, -2]
+
     return C
 # Example monsoon pulse source term
 def monsoon_source(nt, nx, source_node, peak_time, magnitude, duration):
@@ -42,15 +42,38 @@ def monsoon_source(nt, nx, source_node, peak_time, magnitude, duration):
     pulse = magnitude * np.exp(-((t_arr - peak_time)**2) / (2*(duration/2.355)**2))
     S[:, source_node] = pulse
     return S
+# Railfall-driven containment release
+def rainfall_source(rainfall, CN, nx, source_node, release_factor):
+    runoff = scs_runoff(rainfall, CN)
+    source = np.zeros((len(rainfall), nx))
+    source[:, source_node] = runoff * release_factor
+    return source
+
 # Run example scenario
 nx, nt = 200, 500
 dx, dt = 50, 10 # meters, seconds
+
+rainfall = np.zeros(nt)  # mm per timestep
+rainfall[95:106] = 20    # Example: 20 mm per timestep during a storm
+CN = 80                  # Placeholder curve number
 #v, D, k = 0.8, 5.0, 1e-5
-for key, m in metals.items():
+for name, m in metals.items():
     C0 = np.zeros(nx)
-    S_source = monsoon_source(nt, nx, source_node=5, peak_time=100, magnitude=0.02, duration=50)
-    models_result[key] = adr_model(C0, m["v"], m["D"], m["k"], S_source, dx, dt, nx, nt)
-plt.imshow(models_result["default"].T, aspect='auto', origin='lower', cmap='inferno',
+    source = rainfall_source(
+        rainfall, CN, nx, source_node=5,
+        release_factor=m["source"]
+    )
+    models_result[name] = adr_model(
+        C0, m["v"], m["D"], m["k"],
+        source, dx, dt, nx, nt
+    )
+    result = models_result[name]
+    print(name, "minimum concentration:", result.min())
+    print("Location (time, distance):", np.unravel_index(
+        np.argmin(result), result.shape
+    ))
+    print("Minimum source value:", source.min())
+plt.imshow(models_result["Nickel (Ni)"].T, aspect='auto', origin='lower', cmap='inferno',
     extent=[0, nt*dt/3600, 0, nx*dx/1000])
 plt.xlabel("Time (hours)")
 plt.ylabel("Distance downstream (km)")
