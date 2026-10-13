@@ -2,19 +2,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 metals = {
-    "Nickel (Ni)": {"v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002},
-    "Chromium (Cr)": {"v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002},
+    "Nickel (Ni)": {
+        "v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002,
+        "runoff_concentration": 0.1
+    },
+    "Chromium (Cr)": {
+        "v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002,
+        "runoff_concentration": 0.05
+    },
 }
 models_result = {}
 
 # Rainfall-runoff (SCS-CN)
-# Q - direct runoff depth (mm)
+# with cumulative rainfall
 # P - rainfall depth
 # CN - curve number from land cover / soil group)
-def scs_runoff(P, CN):
+def scs_runoff(rainfall, CN):
+    cumulative = np.cumsum(rainfall)
     S = (25400 / CN) - 254
-    Q = np.where(P > 0.2*S, (P - 0.2*S)**2 / (P + 0.8*S), 0)
-    return Q
+    cumulative_runoff = np.where(cumulative > 0.2*S, (cumulative - 0.2*S)**2 / (cumulative + 0.8*S), 0)
+    return np.diff(cumulative_runoff, prepend=0)
 # Hydraulic parameters (Manning's eq.)
 def manning_velocity(n, R, S0):
     return (1/n) * R**(2/3) * S0**0.5
@@ -34,30 +41,47 @@ def adr_model(C0, v, D, k, S_source, dx, dt, nx, nt):
         C[t, -1] = C[t, -2]
     return C
 # Example monsoon pulse source term
+"""
 def monsoon_source(nt, nx, source_node, peak_time, magnitude, duration):
     S = np.zeros((nt, nx))
     t_arr = np.arange(nt)
     pulse = magnitude * np.exp(-((t_arr - peak_time)**2) / (2*(duration/2.355)**2))
     S[:, source_node] = pulse
     return S
-# Railfall-driven containment release
-def rainfall_source(rainfall, CN, nx, source_node, release_factor):
+"""
+# Rainfall-driven containment release
+def rainfall_source_old(rainfall, CN, nx, source_node, release_factor):
     runoff = scs_runoff(rainfall, CN)
     source = np.zeros((len(rainfall), nx))
     source[:, source_node] = runoff * release_factor
     return source
+# Revised function where:
+# change of C = (V runoff * C runoff) / V river
+def rainfall_source(runoff, nx, source_node, metal_concentration, catchment_area, river_discharge, dt):
+    source = np.zeros((len(runoff), nx))
+    runoff_volume = runoff * catchment_area
+    metal_mass = runoff_volume * metal_concentration
+    river_volume = river_discharge * dt * 1000
+    source[:, source_node] = metal_mass / river_volume / dt
+    return source
 # Run example scenario
 nx, nt = 200, 500
 dx, dt = 50, 10 # meters, seconds
-rainfall = np.zeros(nt)  # mm per timestep
-rainfall[95:106] = 20    # Example: 20 mm per timestep during a storm
-CN = 80                  # Placeholder curve number
+rainfall = np.zeros(nt)    # mm per timestep
+rainfall[95:106] = 20 / 11 # Example: 20 mm per timestep during a storm
+CN = 80                    # !!!Placeholder curve number
+catchment_area = 10_000 # meter squared [placeholder]
+river_discharge = 0.5   # meter cubed per second [placeholder]
+runoff = scs_runoff(rainfall,CN)
 #v, D, k = 0.8, 5.0, 1e-5
 for name, m in metals.items():
     C0 = np.zeros(nx)
     source = rainfall_source(
-        rainfall, CN, nx, source_node=5,
-        release_factor=m["source"]
+        runoff, nx, source_node=5,
+        metal_concentration=m["runoff_concentration"],
+        catchment_area=catchment_area,
+        river_discharge=river_discharge,
+        dt=dt
     )
     models_result[name] = adr_model(
         C0, m["v"], m["D"], m["k"],
