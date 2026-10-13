@@ -1,5 +1,15 @@
+from fileio import read_table, write_table
+from dataproc import prepare_data, descriptive_stats
 import numpy as np
 import matplotlib.pyplot as plt
+
+"""
+raw = read_table("placeholder.xlsx")
+data = prepare_data(raw)
+
+write_table(data, "prep_data.csv")
+write_table(descriptive_stats(data), "desc_stats.csv")
+"""
 
 metals = {
     "Nickel (Ni)": {
