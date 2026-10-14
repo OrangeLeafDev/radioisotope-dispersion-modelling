@@ -1,0 +1,7 @@
+analyte,sample_type,test_used,statistic,p_value,significant_H1
+Chromium (Cr),Sediment,One-Way ANOVA,2247.8018150959306,5.02725268725129e-28,True
+Chromium (Cr),Soil,Kruskal-Wallis,23.14285714285714,9.431753104603051e-06,True
+Chromium (Cr),Water,One-Way ANOVA,378.3489720218748,7.124238870991554e-19,True
+Nickel (Ni),Sediment,Kruskal-Wallis,23.14285714285714,9.431753104603051e-06,True
+Nickel (Ni),Soil,Kruskal-Wallis,23.14285714285714,9.431753104603051e-06,True
+Nickel (Ni),Water,Kruskal-Wallis,23.14285714285714,9.431753104603051e-06,True

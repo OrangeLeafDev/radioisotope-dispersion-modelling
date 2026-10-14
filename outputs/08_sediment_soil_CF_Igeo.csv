@@ -1,0 +1,541 @@
+campaign,location,storm_phase,sample_type,analyte,value,unit,below_detection_limit,value_numeric,missing_value,unit_converted_flag,unit_standardized,C_background,CF,Igeo
+1,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.15,mg/kg,False,7.15,False,False,mg/kg,26.315185185185186,0.2717062391803071,-2.4648429011154693
+1,Station 00,Pre-Storm,Sediment,Chromium (Cr),10.96,mg/kg,False,10.96,False,False,mg/kg,37.556296296296296,0.29182856353918074,-2.3617694976180923
+1,Station 00,Pre-Storm,Soil,Nickel (Ni),10.49,mg/kg,False,10.49,False,False,mg/kg,26.315185185185186,0.3986291537064925,-1.9118433702039535
+1,Station 00,Pre-Storm,Soil,Chromium (Cr),15.66,mg/kg,False,15.66,False,False,mg/kg,37.556296296296296,0.4169740241809826,-1.8469330832875783
+1,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.42,mg/kg,False,7.42,False,False,mg/kg,26.315185185185186,0.2819664747857173,-2.4113669561604176
+1,Station 00,Pre-Storm,Sediment,Chromium (Cr),10.71,mg/kg,False,10.71,False,False,mg/kg,37.556296296296296,0.285171890100787,-2.3950588158283628
+1,Station 00,Pre-Storm,Soil,Nickel (Ni),11.81,mg/kg,False,11.81,False,False,mg/kg,26.315185185185186,0.4487903055551646,-1.7408490833840635
+1,Station 00,Pre-Storm,Soil,Chromium (Cr),16.21,mg/kg,False,16.21,False,False,mg/kg,37.556296296296296,0.43161870574544886,-1.7971332050610773
+1,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.22,mg/kg,False,7.22,False,False,mg/kg,26.315185185185186,0.2743663002631912,-2.45078730589405
+1,Station 00,Pre-Storm,Sediment,Chromium (Cr),12.51,mg/kg,False,12.51,False,False,mg/kg,37.556296296296296,0.3330999388572218,-2.1709355064127993
+1,Station 00,Pre-Storm,Soil,Nickel (Ni),10.69,mg/kg,False,10.69,False,False,mg/kg,26.315185185185186,0.4062293282290186,-1.8845961950607304
+1,Station 00,Pre-Storm,Soil,Chromium (Cr),13.7,mg/kg,False,13.7,False,False,mg/kg,37.556296296296296,0.36478570442397584,-2.03984140273073
+1,Station 00,During-Storm,Sediment,Nickel (Ni),39.8,mg/kg,False,39.8,False,False,mg/kg,26.315185185185186,1.5124347299826884,0.011910382649790099
+1,Station 00,During-Storm,Sediment,Chromium (Cr),61.4,mg/kg,False,61.4,False,False,mg/kg,37.556296296296296,1.6348789964694976,0.12422135967892274
+1,Station 00,During-Storm,Soil,Nickel (Ni),61.34,mg/kg,False,61.34,False,False,mg/kg,26.315185185185186,2.3309735260587465,0.6359701184857985
+1,Station 00,During-Storm,Soil,Chromium (Cr),67.63,mg/kg,False,67.63,False,False,mg/kg,37.556296296296296,1.800763298554269,0.2636460578442987
+1,Station 00,During-Storm,Sediment,Nickel (Ni),37.19,mg/kg,False,37.19,False,False,mg/kg,26.315185185185186,1.413252452463723,-0.08594330016923342
+1,Station 00,During-Storm,Sediment,Chromium (Cr),64.48,mg/kg,False,64.48,False,False,mg/kg,37.556296296296296,1.7168892132305085,0.19483444794934854
+1,Station 00,During-Storm,Soil,Nickel (Ni),58.63,mg/kg,False,58.63,False,False,mg/kg,26.315185185185186,2.2279911612785184,0.5707810086152523
+1,Station 00,During-Storm,Soil,Chromium (Cr),74.45,mg/kg,False,74.45,False,False,mg/kg,37.556296296296296,1.98235734995365,0.4022545528908433
+1,Station 00,During-Storm,Sediment,Nickel (Ni),41.96,mg/kg,False,41.96,False,False,mg/kg,26.315185185185186,1.59451661482597,0.08815662979604653
+1,Station 00,During-Storm,Sediment,Chromium (Cr),64.71,mg/kg,False,64.71,False,False,mg/kg,37.556296296296296,1.7230133527938303,0.19997138130299108
+1,Station 00,During-Storm,Soil,Nickel (Ni),57.56,mg/kg,False,57.56,False,False,mg/kg,26.315185185185186,2.1873302275830038,0.544208543959077
+1,Station 00,During-Storm,Soil,Chromium (Cr),89.82,mg/kg,False,89.82,False,False,mg/kg,37.556296296296296,2.3916096329460954,0.6730194262009538
+1,Station 00,Post-Storm,Sediment,Nickel (Ni),17.5,mg/kg,False,17.5,False,False,mg/kg,26.315185185185186,0.6650152707210314,-1.1735031260615298
+1,Station 00,Post-Storm,Sediment,Chromium (Cr),24.26,mg/kg,False,24.26,False,False,mg/kg,37.556296296296296,0.6459635904617267,-1.2154377454581087
+1,Station 00,Post-Storm,Soil,Nickel (Ni),25.25,mg/kg,False,25.25,False,False,mg/kg,26.315185185185186,0.9595220334689166,-0.6445746602547017
+1,Station 00,Post-Storm,Soil,Chromium (Cr),30.59,mg/kg,False,30.59,False,False,mg/kg,37.556296296296296,0.8145105619218556,-0.8809571890204164
+1,Station 00,Post-Storm,Sediment,Nickel (Ni),15.32,mg/kg,False,15.32,False,False,mg/kg,26.315185185185186,0.5821733684254972,-1.365441750856264
+1,Station 00,Post-Storm,Sediment,Chromium (Cr),25.6,mg/kg,False,25.6,False,False,mg/kg,37.556296296296296,0.6816433600915169,-1.1378734856912565
+1,Station 00,Post-Storm,Soil,Nickel (Ni),24.69,mg/kg,False,24.69,False,False,mg/kg,26.315185185185186,0.9382415448058438,-0.676931211638439
+1,Station 00,Post-Storm,Soil,Chromium (Cr),29.38,mg/kg,False,29.38,False,False,mg/kg,37.556296296296296,0.7822922624800299,-0.9391829000223391
+1,Station 00,Post-Storm,Sediment,Nickel (Ni),16.59,mg/kg,False,16.59,False,False,mg/kg,26.315185185185186,0.6304344766435377,-1.2505441618253577
+1,Station 00,Post-Storm,Sediment,Chromium (Cr),24.67,mg/kg,False,24.67,False,False,mg/kg,37.556296296296296,0.6568805349006923,-1.1912595802784958
+1,Station 00,Post-Storm,Soil,Nickel (Ni),23.91,mg/kg,False,23.91,False,False,mg/kg,26.315185185185186,0.908600864167992,-0.723243918069593
+1,Station 00,Post-Storm,Soil,Chromium (Cr),32.35,mg/kg,False,32.35,False,False,mg/kg,37.556296296296296,0.8613735429281474,-0.800251583698749
+1,Source,Pre-Storm,Sediment,Nickel (Ni),87.73,mg/kg,False,87.73,False,False,mg/kg,26.315185185185186,3.333816554306062,1.1522122204375365
+1,Source,Pre-Storm,Sediment,Chromium (Cr),133.36,mg/kg,False,133.36,False,False,mg/kg,37.556296296296296,3.5509358789767465,1.2432368084077978
+1,Source,Pre-Storm,Soil,Nickel (Ni),116.69,mg/kg,False,116.69,False,False,mg/kg,26.315185185185186,4.434321825167837,1.5637509782627999
+1,Source,Pre-Storm,Soil,Chromium (Cr),188.04,mg/kg,False,188.04,False,False,mg/kg,37.556296296296296,5.006883493422221,1.7389503846151173
+1,Source,Pre-Storm,Sediment,Nickel (Ni),86.4,mg/kg,False,86.4,False,False,mg/kg,26.315185185185186,3.2832753937312638,1.13017326426961
+1,Source,Pre-Storm,Sediment,Chromium (Cr),120.12,mg/kg,False,120.12,False,False,mg/kg,37.556296296296296,3.198398453679415,1.0923871789785307
+1,Source,Pre-Storm,Soil,Nickel (Ni),140.09,mg/kg,False,140.09,False,False,mg/kg,26.315185185185186,5.323542244303388,1.8274240227702654
+1,Source,Pre-Storm,Soil,Chromium (Cr),198.19,mg/kg,False,198.19,False,False,mg/kg,37.556296296296296,5.277144435021006,1.8147949697981052
+1,Source,Pre-Storm,Sediment,Nickel (Ni),90.38,mg/kg,False,90.38,False,False,mg/kg,26.315185185185186,3.434518866729532,1.1951455088897824
+1,Source,Pre-Storm,Sediment,Chromium (Cr),129.18,mg/kg,False,129.18,False,False,mg/kg,37.556296296296296,3.4396362990868035,1.197293524309771
+1,Source,Pre-Storm,Soil,Nickel (Ni),131.34,mg/kg,False,131.34,False,False,mg/kg,26.315185185185186,4.991034608942872,1.7343764071208814
+1,Source,Pre-Storm,Soil,Chromium (Cr),168.48,mg/kg,False,168.48,False,False,mg/kg,37.556296296296296,4.486065363602296,1.5804881404470978
+1,Source,During-Storm,Sediment,Nickel (Ni),512.11,mg/kg,False,512.11,False,False,mg/kg,26.315185185185186,19.460626873654135,3.697523777715122
+1,Source,During-Storm,Sediment,Chromium (Cr),779.7,mg/kg,False,779.7,False,False,mg/kg,37.556296296296296,20.760833119662337,3.7908299335021
+1,Source,During-Storm,Soil,Nickel (Ni),664.37,mg/kg,False,664.37,False,False,mg/kg,26.315185185185186,25.246639737653233,4.073056975835529
+1,Source,During-Storm,Soil,Chromium (Cr),1077.87,mg/kg,False,1077.87,False,False,mg/kg,37.556296296296296,28.700114396165755,4.258022081535884
+1,Source,During-Storm,Sediment,Nickel (Ni),454.44,mg/kg,False,454.44,False,False,mg/kg,26.315185185185186,17.26911655008374,3.5251598738243546
+1,Source,During-Storm,Sediment,Chromium (Cr),791.18,mg/kg,False,791.18,False,False,mg/kg,37.556296296296296,21.066507563953373,3.811916756077069
+1,Source,During-Storm,Soil,Nickel (Ni),711.0,mg/kg,False,711.0,False,False,mg/kg,26.315185185185186,27.01862042758019,4.170919606612919
+1,Source,During-Storm,Soil,Chromium (Cr),834.32,mg/kg,False,834.32,False,False,mg/kg,37.556296296296296,22.215183132482597,3.8885116285249475
+1,Source,During-Storm,Sediment,Nickel (Ni),474.39,mg/kg,False,474.39,False,False,mg/kg,26.315185185185186,18.027233958705718,3.5871436453906234
+1,Source,During-Storm,Sediment,Chromium (Cr),775.28,mg/kg,False,775.28,False,False,mg/kg,37.556296296296296,20.643143133271533,3.7826282469790917
+1,Source,During-Storm,Soil,Nickel (Ni),721.93,mg/kg,False,721.93,False,False,mg/kg,26.315185185185186,27.433969965236237,4.1929290036192475
+1,Source,During-Storm,Soil,Chromium (Cr),1061.73,mg/kg,False,1061.73,False,False,mg/kg,37.556296296296296,28.27035955898306,4.236255826492103
+1,Source,Post-Storm,Sediment,Nickel (Ni),211.59,mg/kg,False,211.59,False,False,mg/kg,26.315185185185186,8.040604636106458,2.422341492314113
+1,Source,Post-Storm,Sediment,Chromium (Cr),334.37,mg/kg,False,334.37,False,False,mg/kg,37.556296296296296,8.903167590382832,2.569356212200725
+1,Source,Post-Storm,Soil,Nickel (Ni),299.71,mg/kg,False,299.71,False,False,mg/kg,26.315185185185186,11.389241530731445,2.9246372677892998
+1,Source,Post-Storm,Soil,Chromium (Cr),407.42,mg/kg,False,407.42,False,False,mg/kg,37.556296296296296,10.848247569081478,2.8544276020350536
+1,Source,Post-Storm,Sediment,Nickel (Ni),184.03,mg/kg,False,184.03,False,False,mg/kg,26.315185185185186,6.9933005869023654,2.221011015894429
+1,Source,Post-Storm,Sediment,Chromium (Cr),316.97,mg/kg,False,316.97,False,False,mg/kg,37.556296296296296,8.439863119070631,2.492257100220858
+1,Source,Post-Storm,Soil,Nickel (Ni),309.93,mg/kg,False,309.93,False,False,mg/kg,26.315185185185186,11.77761044883253,2.973012455633794
+1,Source,Post-Storm,Soil,Chromium (Cr),346.2,mg/kg,False,346.2,False,False,mg/kg,37.556296296296296,9.218161377487624,2.619516523675382
+1,Source,Post-Storm,Sediment,Nickel (Ni),204.74,mg/kg,False,204.74,False,False,mg/kg,26.315185185185186,7.780298658709941,2.3748630356175315
+1,Source,Post-Storm,Sediment,Chromium (Cr),267.88,mg/kg,False,267.88,False,False,mg/kg,37.556296296296296,7.1327587227076386,2.2494976721335362
+1,Source,Post-Storm,Soil,Nickel (Ni),297.83,mg/kg,False,297.83,False,False,mg/kg,26.315185185185186,11.3177998902197,2.915559128664546
+1,Source,Post-Storm,Soil,Chromium (Cr),430.45,mg/kg,False,430.45,False,False,mg/kg,37.556296296296296,11.461460326226307,2.9337564664619884
+1,Near-Field,Pre-Storm,Sediment,Nickel (Ni),64.34,mg/kg,False,64.34,False,False,mg/kg,26.315185185185186,2.4449761438966378,0.7048578878715176
+1,Near-Field,Pre-Storm,Sediment,Chromium (Cr),94.0,mg/kg,False,94.0,False,False,mg/kg,37.556296296296296,2.502909212836039,0.7386434608737431
+1,Near-Field,Pre-Storm,Soil,Nickel (Ni),96.76,mg/kg,False,96.76,False,False,mg/kg,26.315185185185186,3.6769644339981142,1.2935527211987041
+1,Near-Field,Pre-Storm,Soil,Chromium (Cr),110.89,mg/kg,False,110.89,False,False,mg/kg,37.556296296296296,2.9526340703339184,0.9770400688807634
+1,Near-Field,Pre-Storm,Sediment,Nickel (Ni),57.21,mg/kg,False,57.21,False,False,mg/kg,26.315185185185186,2.1740299221685833,0.5354092962526915
+1,Near-Field,Pre-Storm,Sediment,Chromium (Cr),100.42,mg/kg,False,100.42,False,False,mg/kg,37.556296296296296,2.6738525867339895,0.8339574290892453
+1,Near-Field,Pre-Storm,Soil,Nickel (Ni),88.58,mg/kg,False,88.58,False,False,mg/kg,26.315185185185186,3.3661172960267973,1.1661229491040954
+1,Near-Field,Pre-Storm,Soil,Chromium (Cr),125.4,mg/kg,False,125.4,False,False,mg/kg,37.556296296296296,3.33898739669829,1.1544481471107824
+1,Near-Field,Pre-Storm,Sediment,Nickel (Ni),60.59,mg/kg,False,60.59,False,False,mg/kg,26.315185185185186,2.302472871599274,0.618221657445721
+1,Near-Field,Pre-Storm,Sediment,Chromium (Cr),93.43,mg/kg,False,93.43,False,False,mg/kg,37.556296296296296,2.487731997396501,0.729868572025135
+1,Near-Field,Pre-Storm,Soil,Nickel (Ni),90.11,mg/kg,False,90.11,False,False,mg/kg,26.315185185185186,3.424258631124122,1.1908291705707394
+1,Near-Field,Pre-Storm,Soil,Chromium (Cr),110.49,mg/kg,False,110.49,False,False,mg/kg,37.556296296296296,2.9419833928324883,0.9718266020422752
+1,Near-Field,During-Storm,Sediment,Nickel (Ni),341.35,mg/kg,False,341.35,False,False,mg/kg,26.315185185185186,12.971597866321375,3.1123217986463705
+1,Near-Field,During-Storm,Sediment,Chromium (Cr),552.9,mg/kg,False,552.9,False,False,mg/kg,37.556296296296296,14.72189897635155,3.2949293706606126
+1,Near-Field,During-Storm,Soil,Nickel (Ni),562.01,mg/kg,False,562.01,False,False,mg/kg,26.315185185185186,21.35687041702439,3.83166584771631
+1,Near-Field,During-Storm,Soil,Chromium (Cr),727.36,mg/kg,False,727.36,False,False,mg/kg,37.556296296296296,19.367191968600224,3.690580388239229
+1,Near-Field,During-Storm,Sediment,Nickel (Ni),323.69,mg/kg,False,323.69,False,False,mg/kg,26.315185185185186,12.300502455982322,3.0356828427346594
+1,Near-Field,During-Storm,Sediment,Chromium (Cr),567.88,mg/kg,False,567.88,False,False,mg/kg,37.556296296296296,15.120766848780104,3.3334969017726777
+1,Near-Field,During-Storm,Soil,Nickel (Ni),537.18,mg/kg,False,537.18,False,False,mg/kg,26.315185185185186,20.413308750052778,3.766475638879176
+1,Near-Field,During-Storm,Soil,Chromium (Cr),756.87,mg/kg,False,756.87,False,False,mg/kg,37.556296296296296,20.15294570126822,3.747956323143239
+1,Near-Field,During-Storm,Sediment,Nickel (Ni),350.37,mg/kg,False,350.37,False,False,mg/kg,26.315185185185186,13.3143657372873,3.1499492980083748
+1,Near-Field,During-Storm,Sediment,Chromium (Cr),528.62,mg/kg,False,528.62,False,False,mg/kg,37.556296296296296,14.075402852014754,3.230141808428135
+1,Near-Field,During-Storm,Soil,Nickel (Ni),473.79,mg/kg,False,473.79,False,False,mg/kg,26.315185185185186,18.00443343513814,3.5853177955729274
+1,Near-Field,During-Storm,Soil,Chromium (Cr),656.14,mg/kg,False,656.14,False,False,mg/kg,37.556296296296296,17.470838839470623,3.541914473198845
+1,Near-Field,Post-Storm,Sediment,Nickel (Ni),129.55,mg/kg,False,129.55,False,False,mg/kg,26.315185185185186,4.923013046966264,1.7145790622862358
+1,Near-Field,Post-Storm,Sediment,Chromium (Cr),213.48,mg/kg,False,213.48,False,False,mg/kg,37.556296296296296,5.684266582513165,1.922011715409697
+1,Near-Field,Post-Storm,Soil,Nickel (Ni),193.79,mg/kg,False,193.79,False,False,mg/kg,26.315185185185186,7.364189103601638,2.295564173131986
+1,Near-Field,Post-Storm,Soil,Chromium (Cr),261.19,mg/kg,False,261.19,False,False,mg/kg,37.556296296296296,6.954626141496223,2.2130104614501867
+1,Near-Field,Post-Storm,Sediment,Nickel (Ni),142.81,mg/kg,False,142.81,False,False,mg/kg,26.315185185185186,5.426904617809742,1.855167051662462
+1,Near-Field,Post-Storm,Sediment,Chromium (Cr),204.88,mg/kg,False,204.88,False,False,mg/kg,37.556296296296296,5.455277016232421,1.8626899570188495
+1,Near-Field,Post-Storm,Soil,Nickel (Ni),217.68,mg/kg,False,217.68,False,False,mg/kg,26.315185185185186,8.272029950317378,2.4632789084684577
+1,Near-Field,Post-Storm,Soil,Chromium (Cr),249.43,mg/kg,False,249.43,False,False,mg/kg,37.556296296296296,6.641496222954182,2.146545793602475
+1,Near-Field,Post-Storm,Sediment,Nickel (Ni),131.52,mg/kg,False,131.52,False,False,mg/kg,26.315185185185186,4.997874766013146,1.736352250900462
+1,Near-Field,Post-Storm,Sediment,Chromium (Cr),239.52,mg/kg,False,239.52,False,False,mg/kg,37.556296296296296,6.377625687856256,2.0880569254797976
+1,Near-Field,Post-Storm,Soil,Nickel (Ni),212.89,mg/kg,False,212.89,False,False,mg/kg,26.315185185185186,8.090005770502877,2.4311782309913172
+1,Near-Field,Post-Storm,Soil,Chromium (Cr),275.59,mg/kg,False,275.59,False,False,mg/kg,37.556296296296296,7.338050531547701,2.290434338638026
+1,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),42.04,mg/kg,False,42.04,False,False,mg/kg,26.315185185185186,1.5975566846349805,0.0909046211809574
+1,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),59.02,mg/kg,False,59.02,False,False,mg/kg,37.556296296296296,1.5715074653359895,0.06718662485338822
+1,Mid-Field,Pre-Storm,Soil,Nickel (Ni),70.83,mg/kg,False,70.83,False,False,mg/kg,26.315185185185186,2.6916018071526087,0.8435024941685777
+1,Mid-Field,Pre-Storm,Soil,Chromium (Cr),74.23,mg/kg,False,74.23,False,False,mg/kg,37.556296296296296,1.9764994773278635,0.3979850729253161
+1,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),40.68,mg/kg,False,40.68,False,False,mg/kg,26.315185185185186,1.5458754978818032,0.04346163107627913
+1,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),65.02,mg/kg,False,65.02,False,False,mg/kg,37.556296296296296,1.7312676278574386,0.20686626011173675
+1,Mid-Field,Pre-Storm,Soil,Nickel (Ni),65.68,mg/kg,False,65.68,False,False,mg/kg,26.315185185185186,2.4958973131975624,0.7345960789965839
+1,Mid-Field,Pre-Storm,Soil,Chromium (Cr),98.27,mg/kg,False,98.27,False,False,mg/kg,37.556296296296296,2.6166051951638036,0.8027337599476634
+1,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),46.25,mg/kg,False,46.25,False,False,mg/kg,26.315185185185186,1.7575403583341542,0.2285953175098158
+1,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),61.58,mg/kg,False,61.58,False,False,mg/kg,37.556296296296296,1.639671801345141,0.12844457146619823
+1,Mid-Field,Pre-Storm,Soil,Nickel (Ni),68.84,mg/kg,False,68.84,False,False,mg/kg,26.315185185185186,2.615980070653474,0.8023890492589826
+1,Mid-Field,Pre-Storm,Soil,Chromium (Cr),81.12,mg/kg,False,81.12,False,False,mg/kg,37.556296296296296,2.1599573972899946,0.5260403564247217
+1,Mid-Field,During-Storm,Sediment,Nickel (Ni),254.26,mg/kg,False,254.26,False,False,mg/kg,26.315185185185186,9.662101870487396,2.687374562902923
+1,Mid-Field,During-Storm,Sediment,Chromium (Cr),430.33,mg/kg,False,430.33,False,False,mg/kg,37.556296296296296,11.458265122975877,2.933354218719178
+1,Mid-Field,During-Storm,Soil,Nickel (Ni),340.4,mg/kg,False,340.4,False,False,mg/kg,26.315185185185186,12.935497037339374,3.108301083792104
+1,Mid-Field,During-Storm,Soil,Chromium (Cr),493.49,mg/kg,False,493.49,False,False,mg/kg,37.556296296296296,13.140007100451669,3.130931649414245
+1,Mid-Field,During-Storm,Sediment,Nickel (Ni),245.34,mg/kg,False,245.34,False,False,mg/kg,26.315185185185186,9.323134086782733,2.635852515466301
+1,Mid-Field,During-Storm,Sediment,Chromium (Cr),356.06,mg/kg,False,356.06,False,False,mg/kg,37.556296296296296,9.480700577897872,2.6600311705241535
+1,Mid-Field,During-Storm,Soil,Nickel (Ni),332.27,mg/kg,False,332.27,False,False,mg/kg,26.315185185185186,12.62654994299869,3.0734260876012454
+1,Mid-Field,During-Storm,Soil,Chromium (Cr),482.25,mg/kg,False,482.25,False,False,mg/kg,37.556296296296296,12.840723062661485,3.0976920372452095
+1,Mid-Field,During-Storm,Sediment,Nickel (Ni),244.34,mg/kg,False,244.34,False,False,mg/kg,26.315185185185186,9.285133214170102,2.629960107990312
+1,Mid-Field,During-Storm,Sediment,Chromium (Cr),376.05,mg/kg,False,376.05,False,False,mg/kg,37.556296296296296,10.012968186031834,2.7388352958638387
+1,Mid-Field,During-Storm,Soil,Nickel (Ni),385.28,mg/kg,False,385.28,False,False,mg/kg,26.315185185185186,14.640976200194226,3.2869773439784806
+1,Mid-Field,During-Storm,Soil,Chromium (Cr),429.28,mg/kg,False,429.28,False,False,mg/kg,37.556296296296296,11.430307094534625,2.929829758681902
+1,Mid-Field,Post-Storm,Sediment,Nickel (Ni),102.53,mg/kg,False,102.53,False,False,mg/kg,26.315185185185186,3.896229468972991,1.3771161469250879
+1,Mid-Field,Post-Storm,Sediment,Chromium (Cr),160.92,mg/kg,False,160.92,False,False,mg/kg,37.556296296296296,4.284767558825269,1.514254442047011
+1,Mid-Field,Post-Storm,Soil,Nickel (Ni),137.24,mg/kg,False,137.24,False,False,mg/kg,26.315185185185186,5.215239757357391,1.7977710777764337
+1,Mid-Field,Post-Storm,Soil,Chromium (Cr),208.66,mg/kg,False,208.66,False,False,mg/kg,37.556296296296296,5.555925918620934,1.8890648621779311
+1,Mid-Field,Post-Storm,Sediment,Nickel (Ni),89.0,mg/kg,False,89.0,False,False,mg/kg,26.315185185185186,3.3820776625241025,1.1729472879599014
+1,Mid-Field,Post-Storm,Sediment,Chromium (Cr),140.61,mg/kg,False,140.61,False,False,mg/kg,37.556296296296296,3.7439794086901643,1.3196099996215616
+1,Mid-Field,Post-Storm,Soil,Nickel (Ni),157.33,mg/kg,False,157.33,False,False,mg/kg,26.315185185185186,5.9786772881451355,1.9948638397374963
+1,Mid-Field,Post-Storm,Soil,Chromium (Cr),216.53,mg/kg,False,216.53,False,False,mg/kg,37.556296296296296,5.765477998461569,1.942477721626435
+1,Mid-Field,Post-Storm,Sediment,Nickel (Ni),92.59,mg/kg,False,92.59,False,False,mg/kg,26.315185185185186,3.5185007952034453,1.2299983383527926
+1,Mid-Field,Post-Storm,Sediment,Chromium (Cr),150.03,mg/kg,False,150.03,False,False,mg/kg,37.556296296296296,3.9948028638488395,1.4131618098501102
+1,Mid-Field,Post-Storm,Soil,Nickel (Ni),131.83,mg/kg,False,131.83,False,False,mg/kg,26.315185185185186,5.009655036523061,1.739748762533254
+1,Mid-Field,Post-Storm,Soil,Chromium (Cr),181.67,mg/kg,False,181.67,False,False,mg/kg,37.556296296296296,4.837271454211948,1.6892309993650239
+1,Outlet,Pre-Storm,Sediment,Nickel (Ni),29.31,mg/kg,False,29.31,False,False,mg/kg,26.315185185185186,1.1138055762761958,-0.42946508009167966
+1,Outlet,Pre-Storm,Sediment,Chromium (Cr),41.19,mg/kg,False,41.19,False,False,mg/kg,37.556296296296296,1.0967535157097492,-0.45172316971036225
+1,Outlet,Pre-Storm,Soil,Nickel (Ni),42.57,mg/kg,False,42.57,False,False,mg/kg,26.315185185185186,1.6176971471196746,0.1089790420004867
+1,Outlet,Pre-Storm,Soil,Chromium (Cr),57.48,mg/kg,False,57.48,False,False,mg/kg,37.556296296296296,1.530502356955484,0.02904276587871741
+1,Outlet,Pre-Storm,Sediment,Nickel (Ni),28.34,mg/kg,False,28.34,False,False,mg/kg,26.315185185185186,1.0769447298419446,-0.47801828986320244
+1,Outlet,Pre-Storm,Sediment,Chromium (Cr),43.01,mg/kg,False,43.01,False,False,mg/kg,37.556296296296296,1.1452140983412555,-0.3893451646339695
+1,Outlet,Pre-Storm,Soil,Nickel (Ni),43.85,mg/kg,False,43.85,False,False,mg/kg,26.315185185185186,1.6663382640638416,0.15171879455087442
+1,Outlet,Pre-Storm,Soil,Chromium (Cr),65.82,mg/kg,False,65.82,False,False,mg/kg,37.556296296296296,1.7525689828602984,0.22450873054572998
+1,Outlet,Pre-Storm,Sediment,Nickel (Ni),26.01,mg/kg,False,26.01,False,False,mg/kg,26.315185185185186,0.9884026966545159,-0.6017916488382298
+1,Outlet,Pre-Storm,Sediment,Chromium (Cr),41.54,mg/kg,False,41.54,False,False,mg/kg,37.556296296296296,1.1060728585235005,-0.43951607973397144
+1,Outlet,Pre-Storm,Soil,Nickel (Ni),46.35,mg/kg,False,46.35,False,False,mg/kg,26.315185185185186,1.7613404455954174,0.23171129073167213
+1,Outlet,Pre-Storm,Soil,Chromium (Cr),58.8,mg/kg,False,58.8,False,False,mg/kg,37.556296296296296,1.565649592710203,0.061798859145107674
+1,Outlet,During-Storm,Sediment,Nickel (Ni),151.91,mg/kg,False,151.91,False,False,mg/kg,26.315185185185186,5.772712558584678,1.9442868901141273
+1,Outlet,During-Storm,Sediment,Chromium (Cr),264.26,mg/kg,False,264.26,False,False,mg/kg,37.556296296296296,7.036370091319697,2.2298688653846037
+1,Outlet,During-Storm,Soil,Nickel (Ni),231.22,mg/kg,False,231.22,False,False,mg/kg,26.315185185185186,8.786561765492392,2.5503362398182547
+1,Outlet,During-Storm,Soil,Chromium (Cr),310.64,mg/kg,False,310.64,False,False,mg/kg,37.556296296296296,8.2713161476105,2.4631544113298585
+1,Outlet,During-Storm,Sediment,Nickel (Ni),174.04,mg/kg,False,174.04,False,False,mg/kg,26.315185185185186,6.613671869502188,2.1404889687593083
+1,Outlet,During-Storm,Sediment,Chromium (Cr),249.67,mg/kg,False,249.67,False,False,mg/kg,37.556296296296296,6.64788662945504,2.147933278421153
+1,Outlet,During-Storm,Soil,Nickel (Ni),220.41,mg/kg,False,220.41,False,False,mg/kg,26.315185185185186,8.375772332549857,2.4812597272250696
+1,Outlet,During-Storm,Soil,Chromium (Cr),271.65,mg/kg,False,271.65,False,False,mg/kg,37.556296296296296,7.2331413581586155,2.269659845980067
+1,Outlet,During-Storm,Sediment,Nickel (Ni),146.29,mg/kg,False,146.29,False,False,mg/kg,26.315185185185186,5.559147654501696,1.88990120077305
+1,Outlet,During-Storm,Sediment,Chromium (Cr),230.85,mg/kg,False,230.85,False,False,mg/kg,37.556296296296296,6.146772253012761,2.03486653135811
+1,Outlet,During-Storm,Soil,Nickel (Ni),260.98,mg/kg,False,260.98,False,False,mg/kg,26.315185185185186,9.917467734444273,2.725009297983359
+1,Outlet,During-Storm,Soil,Chromium (Cr),284.7,mg/kg,False,284.7,False,False,mg/kg,37.556296296296296,7.580619711642768,2.337353292051009
+1,Outlet,Post-Storm,Sediment,Nickel (Ni),66.38,mg/kg,False,66.38,False,False,mg/kg,26.315185185185186,2.5224979240264034,0.7498905812970788
+1,Outlet,Post-Storm,Sediment,Chromium (Cr),109.98,mg/kg,False,109.98,False,False,mg/kg,37.556296296296296,2.9284037790181654,0.9651519906824231
+1,Outlet,Post-Storm,Soil,Nickel (Ni),94.38,mg/kg,False,94.38,False,False,mg/kg,26.315185185185186,3.5865223571800535,1.2576231233556217
+1,Outlet,Post-Storm,Soil,Chromium (Cr),146.47,mg/kg,False,146.47,False,False,mg/kg,37.556296296296296,3.9000118340861127,1.3785160009335875
+1,Outlet,Post-Storm,Sediment,Nickel (Ni),71.11,mg/kg,False,71.11,False,False,mg/kg,26.315185185185186,2.702242051484145,0.8491944081524276
+1,Outlet,Post-Storm,Sediment,Chromium (Cr),102.78,mg/kg,False,102.78,False,False,mg/kg,37.556296296296296,2.7366915839924264,0.8674703562265361
+1,Outlet,Post-Storm,Soil,Nickel (Ni),96.03,mg/kg,False,96.03,False,False,mg/kg,26.315185185185186,3.649223796990894,1.2826271294855163
+1,Outlet,Post-Storm,Soil,Chromium (Cr),140.7,mg/kg,False,140.7,False,False,mg/kg,37.556296296296296,3.7463758111279852,1.320533127545276
+1,Outlet,Post-Storm,Sediment,Nickel (Ni),64.99,mg/kg,False,64.99,False,False,mg/kg,26.315185185185186,2.469676711094847,0.719359699863679
+1,Outlet,Post-Storm,Sediment,Chromium (Cr),87.72,mg/kg,False,87.72,False,False,mg/kg,37.556296296296296,2.3356935760635884,0.6388885160949744
+1,Outlet,Post-Storm,Soil,Nickel (Ni),104.5,mg/kg,False,104.5,False,False,mg/kg,26.315185185185186,3.971091188019873,1.4045729890743863
+1,Outlet,Post-Storm,Soil,Chromium (Cr),131.25,mg/kg,False,131.25,False,False,mg/kg,37.556296296296296,3.494753555156703,1.2202282217495906
+2,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.92,mg/kg,False,7.92,False,False,mg/kg,26.315185185185186,0.3009669110920325,-2.3172857127016115
+2,Station 00,Pre-Storm,Sediment,Chromium (Cr),12.21,mg/kg,False,12.21,False,False,mg/kg,37.556296296296296,0.3251119307311493,-2.2059540955912156
+2,Station 00,Pre-Storm,Soil,Nickel (Ni),10.65,mg/kg,False,10.65,False,False,mg/kg,26.315185185185186,0.4047092933245134,-1.8900046176680203
+2,Station 00,Pre-Storm,Soil,Chromium (Cr),14.79,mg/kg,False,14.79,False,False,mg/kg,37.556296296296296,0.3938088006153725,-1.9293952434795514
+2,Station 00,Pre-Storm,Sediment,Nickel (Ni),6.96,mg/kg,False,6.96,False,False,mg/kg,26.315185185185186,0.26448607338390734,-2.5036988369324926
+2,Station 00,Pre-Storm,Sediment,Chromium (Cr),11.1,mg/kg,False,11.1,False,False,mg/kg,37.556296296296296,0.2955563006646812,-2.3434576193411507
+2,Station 00,Pre-Storm,Soil,Nickel (Ni),11.35,mg/kg,False,11.35,False,False,mg/kg,26.315185185185186,0.43130990415335463,-1.7981657506029438
+2,Station 00,Pre-Storm,Soil,Chromium (Cr),12.98,mg/kg,False,12.98,False,False,mg/kg,37.556296296296296,0.34561448492140195,-2.11772691257948
+2,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.76,mg/kg,False,7.76,False,False,mg/kg,26.315185185185186,0.2948867714740116,-2.346729490594093
+2,Station 00,Pre-Storm,Sediment,Chromium (Cr),12.7,mg/kg,False,12.7,False,False,mg/kg,37.556296296296296,0.33815901067040094,-2.149188798919091
+2,Station 00,Pre-Storm,Soil,Nickel (Ni),11.32,mg/kg,False,11.32,False,False,mg/kg,26.315185185185186,0.43016987797497575,-1.8019840899493387
+2,Station 00,Pre-Storm,Soil,Chromium (Cr),16.49,mg/kg,False,16.49,False,False,mg/kg,37.556296296296296,0.43907417999644976,-1.7724258971411522
+2,Station 00,During-Storm,Sediment,Nickel (Ni),38.94,mg/kg,False,38.94,False,False,mg/kg,26.315185185185186,1.4797539795358263,-0.019605164060926366
+2,Station 00,During-Storm,Sediment,Chromium (Cr),59.94,mg/kg,False,59.94,False,False,mg/kg,37.556296296296296,1.5960040235892783,0.08950178793495539
+2,Station 00,During-Storm,Soil,Nickel (Ni),64.28,mg/kg,False,64.28,False,False,mg/kg,26.315185185185186,2.44269609153988,0.7035118808938728
+2,Station 00,During-Storm,Soil,Chromium (Cr),77.55,mg/kg,False,77.55,False,False,mg/kg,37.556296296296296,2.064900100589732,0.46110948534483415
+2,Station 00,During-Storm,Sediment,Nickel (Ni),36.53,mg/kg,False,36.53,False,False,mg/kg,26.315185185185186,1.3881718765393871,-0.11177629441920273
+2,Station 00,During-Storm,Sediment,Chromium (Cr),55.68,mg/kg,False,55.68,False,False,mg/kg,37.556296296296296,1.4825743081990495,-0.016858084729890626
+2,Station 00,During-Storm,Soil,Nickel (Ni),59.52,mg/kg,False,59.52,False,False,mg/kg,26.315185185185186,2.2618119379037593,0.5925164783268104
+2,Station 00,During-Storm,Soil,Chromium (Cr),84.13,mg/kg,False,84.13,False,False,mg/kg,37.556296296296296,2.2401037454882546,0.5786030483632748
+2,Station 00,During-Storm,Sediment,Nickel (Ni),35.71,mg/kg,False,35.71,False,False,mg/kg,26.315185185185186,1.3570111609970303,-0.14452991419515532
+2,Station 00,During-Storm,Sediment,Chromium (Cr),63.33,mg/kg,False,63.33,False,False,mg/kg,37.556296296296296,1.6862685154138972,0.1688717834896932
+2,Station 00,During-Storm,Soil,Nickel (Ni),55.71,mg/kg,False,55.71,False,False,mg/kg,26.315185185185186,2.1170286132496376,0.4970782678753561
+2,Station 00,During-Storm,Soil,Chromium (Cr),74.93,mg/kg,False,74.93,False,False,mg/kg,37.556296296296296,1.995138162955366,0.41152615555538824
+2,Station 00,Post-Storm,Sediment,Nickel (Ni),16.07,mg/kg,False,16.07,False,False,mg/kg,26.315185185185186,0.61067402288497,-1.296488119106127
+2,Station 00,Post-Storm,Sediment,Chromium (Cr),22.19,mg/kg,False,22.19,False,False,mg/kg,37.556296296296296,0.5908463343918267,-1.3441076283816076
+2,Station 00,Post-Storm,Soil,Nickel (Ni),22.76,mg/kg,False,22.76,False,False,mg/kg,26.315185185185186,0.8648998606634671,-0.7943574904746389
+2,Station 00,Post-Storm,Soil,Chromium (Cr),35.72,mg/kg,False,35.72,False,False,mg/kg,37.556296296296296,0.9511055008776947,-0.6572852154573962
+2,Station 00,Post-Storm,Sediment,Nickel (Ni),17.36,mg/kg,False,17.36,False,False,mg/kg,26.315185185185186,0.6596951485552631,-1.1850911003367417
+2,Station 00,Post-Storm,Sediment,Chromium (Cr),23.29,mg/kg,False,23.29,False,False,mg/kg,37.556296296296296,0.6201356975207589,-1.274306656367753
+2,Station 00,Post-Storm,Soil,Nickel (Ni),23.81,mg/kg,False,23.81,False,False,mg/kg,26.315185185185186,0.9048007769067289,-0.729290427510887
+2,Station 00,Post-Storm,Soil,Chromium (Cr),32.65,mg/kg,False,32.65,False,False,mg/kg,37.556296296296296,0.8693615510542199,-0.7869343041448259
+2,Station 00,Post-Storm,Sediment,Nickel (Ni),17.31,mg/kg,False,17.31,False,False,mg/kg,26.315185185185186,0.6577951049246316,-1.1892523234145824
+2,Station 00,Post-Storm,Sediment,Chromium (Cr),28.16,mg/kg,False,28.16,False,False,mg/kg,37.556296296296296,0.7498076961006687,-1.0003699619413218
+2,Station 00,Post-Storm,Soil,Nickel (Ni),23.73,mg/kg,False,23.73,False,False,mg/kg,26.315185185185186,0.9017607070977185,-0.7341459475872729
+2,Station 00,Post-Storm,Soil,Chromium (Cr),34.41,mg/kg,False,34.41,False,False,mg/kg,37.556296296296296,0.9162245320605116,-0.711189403841638
+2,Source,Pre-Storm,Sediment,Nickel (Ni),83.21,mg/kg,False,83.21,False,False,mg/kg,26.315185185185186,3.162052610096972,1.075898870673605
+2,Source,Pre-Storm,Sediment,Chromium (Cr),135.73,mg/kg,False,135.73,False,False,mg/kg,37.556296296296296,3.6140411431727184,1.2686504295857775
+2,Source,Pre-Storm,Soil,Nickel (Ni),139.79,mg/kg,False,139.79,False,False,mg/kg,26.315185185185186,5.312141982519599,1.8243312067203556
+2,Source,Pre-Storm,Soil,Chromium (Cr),189.21,mg/kg,False,189.21,False,False,mg/kg,37.556296296296296,5.038036725113903,1.74789913801368
+2,Source,Pre-Storm,Sediment,Nickel (Ni),84.65,mg/kg,False,84.65,False,False,mg/kg,26.315185185185186,3.2167738666591603,1.1006520200017833
+2,Source,Pre-Storm,Sediment,Chromium (Cr),144.28,mg/kg,False,144.28,False,False,mg/kg,37.556296296296296,3.841699374765784,1.356782127208951
+2,Source,Pre-Storm,Soil,Nickel (Ni),135.08,mg/kg,False,135.08,False,False,mg/kg,26.315185185185186,5.13315787251411,1.7748841312262558
+2,Source,Pre-Storm,Soil,Chromium (Cr),167.7,mg/kg,False,167.7,False,False,mg/kg,37.556296296296296,4.4652965424745075,1.5737934878730895
+2,Source,Pre-Storm,Sediment,Nickel (Ni),94.36,mg/kg,False,94.36,False,False,mg/kg,26.315185185185186,3.585762339727801,1.2573173704582417
+2,Source,Pre-Storm,Sediment,Chromium (Cr),154.72,mg/kg,False,154.72,False,False,mg/kg,37.556296296296296,4.1196820575531055,1.4575704988982223
+2,Source,Pre-Storm,Soil,Nickel (Ni),139.97,mg/kg,False,139.97,False,False,mg/kg,26.315185185185186,5.318982139589872,1.8261876918733038
+2,Source,Pre-Storm,Soil,Chromium (Cr),193.97,mg/kg,False,193.97,False,False,mg/kg,37.556296296296296,5.16477978738092,1.783744336960402
+2,Source,During-Storm,Sediment,Nickel (Ni),498.12,mg/kg,False,498.12,False,False,mg/kg,26.315185185185186,18.928994665803437,3.657563384543543
+2,Source,During-Storm,Sediment,Chromium (Cr),758.89,mg/kg,False,758.89,False,False,mg/kg,37.556296296296296,20.20673162265044,3.751801583221121
+2,Source,During-Storm,Soil,Nickel (Ni),716.97,mg/kg,False,716.97,False,False,mg/kg,26.315185185185186,27.245485637077593,4.18298280062329
+2,Source,During-Storm,Soil,Chromium (Cr),865.27,mg/kg,False,865.27,False,False,mg/kg,37.556296296296296,23.039279304155738,3.941061182448925
+2,Source,During-Storm,Sediment,Nickel (Ni),441.9,mg/kg,False,441.9,False,False,mg/kg,26.315185185185186,16.792585607521357,3.4847899778631466
+2,Source,During-Storm,Sediment,Chromium (Cr),803.91,mg/kg,False,803.91,False,False,mg/kg,37.556296296296296,21.405465375436382,3.834944795621888
+2,Source,During-Storm,Soil,Nickel (Ni),652.51,mg/kg,False,652.51,False,False,mg/kg,26.315185185185186,24.795949388467438,4.047070058550151
+2,Source,During-Storm,Soil,Chromium (Cr),925.38,mg/kg,False,925.38,False,False,mg/kg,37.556296296296296,24.639809865683123,4.03795671761402
+2,Source,During-Storm,Sediment,Nickel (Ni),455.52,mg/kg,False,455.52,False,False,mg/kg,26.315185185185186,17.310157492505382,3.5285844449610444
+2,Source,During-Storm,Sediment,Chromium (Cr),745.11,mg/kg,False,745.11,False,False,mg/kg,37.556296296296296,19.83981578272618,3.725364224196375
+2,Source,During-Storm,Soil,Nickel (Ni),682.36,mg/kg,False,682.36,False,False,mg/kg,26.315185185185186,25.930275435954456,4.111603124999724
+2,Source,During-Storm,Soil,Chromium (Cr),954.9,mg/kg,False,954.9,False,False,mg/kg,37.556296296296296,25.42582986528865,4.083260456665821
+2,Source,Post-Storm,Sediment,Nickel (Ni),205.17,mg/kg,False,205.17,False,False,mg/kg,26.315185185185186,7.7966390339333715,2.3778898419659247
+2,Source,Post-Storm,Sediment,Chromium (Cr),333.89,mg/kg,False,333.89,False,False,mg/kg,37.556296296296296,8.890386777381117,2.567283684326186
+2,Source,Post-Storm,Soil,Nickel (Ni),317.39,mg/kg,False,317.39,False,False,mg/kg,26.315185185185186,12.06109695852275,3.0073267206953203
+2,Source,Post-Storm,Soil,Chromium (Cr),374.88,mg/kg,False,374.88,False,False,mg/kg,37.556296296296296,9.981814954340152,2.7343396582845165
+2,Source,Post-Storm,Sediment,Nickel (Ni),213.6,mg/kg,False,213.6,False,False,mg/kg,26.315185185185186,8.116986390057845,2.4359816937936953
+2,Source,Post-Storm,Sediment,Chromium (Cr),281.23,mg/kg,False,281.23,False,False,mg/kg,37.556296296296296,7.488225084317865,2.319661300005277
+2,Source,Post-Storm,Soil,Nickel (Ni),284.24,mg/kg,False,284.24,False,False,mg/kg,26.315185185185186,10.801368031414055,2.848179640550001
+2,Source,Post-Storm,Soil,Chromium (Cr),341.39,mg/kg,False,341.39,False,False,mg/kg,37.556296296296296,9.090086980532929,2.5993315985148526
+2,Source,Post-Storm,Sediment,Nickel (Ni),212.38,mg/kg,False,212.38,False,False,mg/kg,26.315185185185186,8.070625325470436,2.4277179595234166
+2,Source,Post-Storm,Sediment,Chromium (Cr),274.98,mg/kg,False,274.98,False,False,mg/kg,37.556296296296296,7.321808248358021,2.28723749051685
+2,Source,Post-Storm,Soil,Nickel (Ni),314.45,mg/kg,False,314.45,False,False,mg/kg,26.315185185185186,11.949374393041618,2.9939006823569443
+2,Source,Post-Storm,Soil,Chromium (Cr),372.42,mg/kg,False,372.42,False,False,mg/kg,37.556296296296296,9.916313287706357,2.724841350723703
+2,Near-Field,Pre-Storm,Sediment,Nickel (Ni),56.54,mg/kg,False,56.54,False,False,mg/kg,26.315185185185186,2.1485693375181207,0.5184138350499543
+2,Near-Field,Pre-Storm,Sediment,Chromium (Cr),99.55,mg/kg,False,99.55,False,False,mg/kg,37.556296296296296,2.6506873631683794,0.821404020029246
+2,Near-Field,Pre-Storm,Soil,Nickel (Ni),93.11,mg/kg,False,93.11,False,False,mg/kg,26.315185185185186,3.538261248962013,1.2380780732165462
+2,Near-Field,Pre-Storm,Soil,Chromium (Cr),107.9,mg/kg,False,107.9,False,False,mg/kg,37.556296296296296,2.87302025601073,0.9376056637967604
+2,Near-Field,Pre-Storm,Sediment,Nickel (Ni),59.26,mg/kg,False,59.26,False,False,mg/kg,26.315185185185186,2.251931711024475,0.5862005781800612
+2,Near-Field,Pre-Storm,Sediment,Chromium (Cr),111.55,mg/kg,False,111.55,False,False,mg/kg,37.556296296296296,2.970207688211278,0.9856013125528839
+2,Near-Field,Pre-Storm,Soil,Nickel (Ni),95.44,mg/kg,False,95.44,False,False,mg/kg,26.315185185185186,3.626803282149442,1.273735994914007
+2,Near-Field,Pre-Storm,Soil,Chromium (Cr),111.85,mg/kg,False,111.85,False,False,mg/kg,37.556296296296296,2.9781956963373504,0.9894760553678621
+2,Near-Field,Pre-Storm,Sediment,Nickel (Ni),63.63,mg/kg,False,63.63,False,False,mg/kg,26.315185185185186,2.41799552434167,0.6888490734704903
+2,Near-Field,Pre-Storm,Sediment,Chromium (Cr),95.24,mg/kg,False,95.24,False,False,mg/kg,37.556296296296296,2.5359263130904717,0.7575503246917149
+2,Near-Field,Pre-Storm,Soil,Nickel (Ni),96.19,mg/kg,False,96.19,False,False,mg/kg,26.315185185185186,3.6553039366089144,1.2850288697815642
+2,Near-Field,Pre-Storm,Soil,Chromium (Cr),131.61,mg/kg,False,131.61,False,False,mg/kg,37.556296296296296,3.5043391649079902,1.224179911161768
+2,Near-Field,During-Storm,Sediment,Nickel (Ni),351.31,mg/kg,False,351.31,False,False,mg/kg,26.315185185185186,13.350086557543174,3.1538146900665605
+2,Near-Field,During-Storm,Sediment,Chromium (Cr),560.56,mg/kg,False,560.56,False,False,mg/kg,37.556296296296296,14.925859450503934,3.3147796003149788
+2,Near-Field,During-Storm,Soil,Nickel (Ni),485.77,mg/kg,False,485.77,False,False,mg/kg,26.315185185185186,18.45968388903745,3.6213434420782344
+2,Near-Field,During-Storm,Soil,Chromium (Cr),635.74,mg/kg,False,635.74,False,False,mg/kg,37.556296296296296,16.927654286897695,3.4963476629033194
+2,Near-Field,During-Storm,Sediment,Nickel (Ni),312.64,mg/kg,False,312.64,False,False,mg/kg,26.315185185185186,11.880592813612756,2.985572419187164
+2,Near-Field,During-Storm,Sediment,Chromium (Cr),569.92,mg/kg,False,569.92,False,False,mg/kg,37.556296296296296,15.175085304037395,3.338670220523
+2,Near-Field,During-Storm,Soil,Nickel (Ni),495.9,mg/kg,False,495.9,False,False,mg/kg,26.315185185185186,18.844632728603397,3.6511192721196113
+2,Near-Field,During-Storm,Soil,Chromium (Cr),731.75,mg/kg,False,731.75,False,False,mg/kg,37.556296296296296,19.484083154178418,3.699261639604856
+2,Near-Field,During-Storm,Sediment,Nickel (Ni),323.58,mg/kg,False,323.58,False,False,mg/kg,26.315185185185186,12.296322359994932,3.035192486450495
+2,Near-Field,During-Storm,Sediment,Chromium (Cr),603.64,mg/kg,False,603.64,False,False,mg/kg,37.556296296296296,16.07293741740794,3.421599207700899
+2,Near-Field,During-Storm,Soil,Nickel (Ni),556.66,mg/kg,False,556.66,False,False,mg/kg,26.315185185185186,21.153565748546818,3.8178664657453805
+2,Near-Field,During-Storm,Soil,Chromium (Cr),725.38,mg/kg,False,725.38,False,False,mg/kg,37.556296296296296,19.314471114968146,3.6866477671924636
+2,Near-Field,Post-Storm,Sediment,Nickel (Ni),147.73,mg/kg,False,147.73,False,False,mg/kg,26.315185185185186,5.613868911063883,1.9040328752835185
+2,Near-Field,Post-Storm,Sediment,Chromium (Cr),226.49,mg/kg,False,226.49,False,False,mg/kg,37.556296296296296,6.030679868247175,2.0073581526909328
+2,Near-Field,Post-Storm,Soil,Nickel (Ni),193.01,mg/kg,False,193.01,False,False,mg/kg,26.315185185185186,7.334548422963786,2.2897456433634833
+2,Near-Field,Post-Storm,Soil,Chromium (Cr),286.76,mg/kg,False,286.76,False,False,mg/kg,37.556296296296296,7.635470700775133,2.3477545962803004
+2,Near-Field,Post-Storm,Sediment,Nickel (Ni),143.58,mg/kg,False,143.58,False,False,mg/kg,26.315185185185186,5.456165289721468,1.8629248494784343
+2,Near-Field,Post-Storm,Sediment,Chromium (Cr),242.48,mg/kg,False,242.48,False,False,mg/kg,37.556296296296296,6.456440701366837,2.10577655620571
+2,Near-Field,Post-Storm,Soil,Nickel (Ni),201.78,mg/kg,False,201.78,False,False,mg/kg,26.315185185185186,7.667816075776555,2.353853231466518
+2,Near-Field,Post-Storm,Soil,Chromium (Cr),258.23,mg/kg,False,258.23,False,False,mg/kg,37.556296296296296,6.875811127985642,2.1965674151738037
+2,Near-Field,Post-Storm,Sediment,Nickel (Ni),152.52,mg/kg,False,152.52,False,False,mg/kg,26.315185185185186,5.7958930908783834,1.9500684829448942
+2,Near-Field,Post-Storm,Sediment,Chromium (Cr),247.68,mg/kg,False,247.68,False,False,mg/kg,37.556296296296296,6.594899508885427,2.1363881755657914
+2,Near-Field,Post-Storm,Soil,Nickel (Ni),214.9,mg/kg,False,214.9,False,False,mg/kg,26.315185185185186,8.166387524454265,2.444735529533925
+2,Near-Field,Post-Storm,Soil,Chromium (Cr),244.96,mg/kg,False,244.96,False,False,mg/kg,37.556296296296296,6.522474901875703,2.1204569869211687
+2,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),39.96,mg/kg,False,39.96,False,False,mg/kg,26.315185185185186,1.5185148696007094,0.01769853501119738
+2,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),61.13,mg/kg,False,61.13,False,False,mg/kg,37.556296296296296,1.6276897891560325,0.11786327118622704
+2,Mid-Field,Pre-Storm,Soil,Nickel (Ni),68.5,mg/kg,False,68.5,False,False,mg/kg,26.315185185185186,2.60305977396518,0.7952459399540305
+2,Mid-Field,Pre-Storm,Soil,Chromium (Cr),81.26,mg/kg,False,81.26,False,False,mg/kg,37.556296296296296,2.163685134415495,0.528528068652469
+2,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),44.93,mg/kg,False,44.93,False,False,mg/kg,26.315185185185186,1.7073792064854822,0.18682101374221732
+2,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),67.83,mg/kg,False,67.83,False,False,mg/kg,37.556296296296296,1.806088637304984,0.26790619689406614
+2,Mid-Field,Pre-Storm,Soil,Nickel (Ni),68.85,mg/kg,False,68.85,False,False,mg/kg,26.315185185185186,2.6163600793796005,0.8025986062411054
+2,Mid-Field,Pre-Storm,Soil,Chromium (Cr),86.29,mg/kg,False,86.29,False,False,mg/kg,37.556296296296296,2.2976174039959765,0.615176081722532
+2,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),45.4,mg/kg,False,45.4,False,False,mg/kg,26.315185185185186,1.7252396166134185,0.2018342493970562
+2,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),62.64,mg/kg,False,62.64,False,False,mg/kg,37.556296296296296,1.6678960967239305,0.15306691671242165
+2,Mid-Field,Pre-Storm,Soil,Nickel (Ni),66.21,mg/kg,False,66.21,False,False,mg/kg,26.315185185185186,2.516037775682256,0.746191082219549
+2,Mid-Field,Pre-Storm,Soil,Chromium (Cr),89.03,mg/kg,False,89.03,False,False,mg/kg,37.556296296296296,2.3705745448807716,0.6602742599191325
+2,Mid-Field,During-Storm,Sediment,Nickel (Ni),223.7,mg/kg,False,223.7,False,False,mg/kg,26.315185185185186,8.500795203445412,2.50263530316526
+2,Mid-Field,During-Storm,Sediment,Chromium (Cr),394.43,mg/kg,False,394.43,False,False,mg/kg,37.556296296296296,10.50236681722254,2.8076800849798422
+2,Mid-Field,During-Storm,Soil,Nickel (Ni),344.35,mg/kg,False,344.35,False,False,mg/kg,26.315185185185186,13.085600484159267,3.124945723797951
+2,Mid-Field,During-Storm,Soil,Chromium (Cr),422.25,mg/kg,False,422.25,False,False,mg/kg,37.556296296296296,11.243121437446993,2.9060082219974914
+2,Mid-Field,During-Storm,Sediment,Nickel (Ni),224.42,mg/kg,False,224.42,False,False,mg/kg,26.315185185185186,8.528155831726506,2.507271299430931
+2,Mid-Field,During-Storm,Sediment,Chromium (Cr),330.52,mg/kg,False,330.52,False,False,mg/kg,37.556296296296296,8.80065481943157,2.55264837184696
+2,Mid-Field,During-Storm,Soil,Nickel (Ni),380.81,mg/kg,False,380.81,False,False,mg/kg,26.315185185185186,14.471112299615768,3.270141410815825
+2,Mid-Field,During-Storm,Soil,Chromium (Cr),485.17,mg/kg,False,485.17,False,False,mg/kg,37.556296296296296,12.918473008421925,3.1064011445873057
+2,Mid-Field,During-Storm,Sediment,Nickel (Ni),224.81,mg/kg,False,224.81,False,False,mg/kg,26.315185185185186,8.542976172045432,2.5097762577253517
+2,Mid-Field,During-Storm,Sediment,Chromium (Cr),334.84,mg/kg,False,334.84,False,False,mg/kg,37.556296296296296,8.915682136447012,2.5713826815622234
+2,Mid-Field,During-Storm,Soil,Nickel (Ni),350.55,mg/kg,False,350.55,False,False,mg/kg,26.315185185185186,13.321205894357574,3.1506902816101228
+2,Mid-Field,During-Storm,Soil,Chromium (Cr),501.43,mg/kg,False,501.43,False,False,mg/kg,37.556296296296296,13.351423048855052,3.1539591125668514
+2,Mid-Field,Post-Storm,Sediment,Nickel (Ni),95.33,mg/kg,False,95.33,False,False,mg/kg,26.315185185185186,3.6226231861620524,1.2720722482862816
+2,Mid-Field,Post-Storm,Sediment,Chromium (Cr),161.8,mg/kg,False,161.8,False,False,mg/kg,37.556296296296296,4.308199049328416,1.522122406738721
+2,Mid-Field,Post-Storm,Soil,Nickel (Ni),136.91,mg/kg,False,136.91,False,False,mg/kg,26.315185185185186,5.202699469395223,1.7942978726446757
+2,Mid-Field,Post-Storm,Soil,Chromium (Cr),216.33,mg/kg,False,216.33,False,False,mg/kg,37.556296296296296,5.7601526597108546,1.9411445467952628
+2,Mid-Field,Post-Storm,Sediment,Nickel (Ni),103.57,mg/kg,False,103.57,False,False,mg/kg,26.315185185185186,3.9357503764901263,1.3916762204590156
+2,Mid-Field,Post-Storm,Sediment,Chromium (Cr),171.67,mg/kg,False,171.67,False,False,mg/kg,37.556296296296296,4.571004516676199,1.6075487437694975
+2,Mid-Field,Post-Storm,Soil,Nickel (Ni),138.77,mg/kg,False,138.77,False,False,mg/kg,26.315185185185186,5.2733810924547155,1.8137657592865193
+2,Mid-Field,Post-Storm,Soil,Chromium (Cr),214.22,mg/kg,False,214.22,False,False,mg/kg,37.556296296296296,5.703970335890811,1.9270039781899397
+2,Mid-Field,Post-Storm,Sediment,Nickel (Ni),90.93,mg/kg,False,90.93,False,False,mg/kg,26.315185185185186,3.455419346666479,1.2038983047242644
+2,Mid-Field,Post-Storm,Sediment,Chromium (Cr),153.17,mg/kg,False,153.17,False,False,mg/kg,37.556296296296296,4.078410682235064,1.443044556485259
+2,Mid-Field,Post-Storm,Soil,Nickel (Ni),133.41,mg/kg,False,133.41,False,False,mg/kg,26.315185185185186,5.069696415251016,1.7569368572914434
+2,Mid-Field,Post-Storm,Soil,Chromium (Cr),221.04,mg/kg,False,221.04,False,False,mg/kg,37.556296296296296,5.8855643872901915,1.9722182662338728
+2,Outlet,Pre-Storm,Sediment,Nickel (Ni),30.75,mg/kg,False,30.75,False,False,mg/kg,26.315185185185186,1.1685268328383838,-0.3602716376672565
+2,Outlet,Pre-Storm,Sediment,Chromium (Cr),40.57,mg/kg,False,40.57,False,False,mg/kg,37.556296296296296,1.080244965582533,-0.47360399337234615
+2,Outlet,Pre-Storm,Soil,Nickel (Ni),44.04,mg/kg,False,44.04,False,False,mg/kg,26.315185185185186,1.673558429860241,0.15795642078314784
+2,Outlet,Pre-Storm,Soil,Chromium (Cr),58.14,mg/kg,False,58.14,False,False,mg/kg,37.556296296296296,1.5480759748328436,0.045513775557618374
+2,Outlet,Pre-Storm,Sediment,Nickel (Ni),30.67,mg/kg,False,30.67,False,False,mg/kg,26.315185185185186,1.1654867630293733,-0.3640298815142014
+2,Outlet,Pre-Storm,Sediment,Chromium (Cr),49.61,mg/kg,False,49.61,False,False,mg/kg,37.556296296296296,1.3209502771148498,-0.1833863386859408
+2,Outlet,Pre-Storm,Soil,Nickel (Ni),43.92,mg/kg,False,43.92,False,False,mg/kg,26.315185185185186,1.6689983251467255,0.1540200062239777
+2,Outlet,Pre-Storm,Soil,Chromium (Cr),55.01,mg/kg,False,55.01,False,False,mg/kg,37.556296296296296,1.4647344233841542,-0.03432339293329123
+2,Outlet,Pre-Storm,Sediment,Nickel (Ni),30.94,mg/kg,False,30.94,False,False,mg/kg,26.315185185185186,1.1757469986347835,-0.35138485133218517
+2,Outlet,Pre-Storm,Sediment,Chromium (Cr),42.41,mg/kg,False,42.41,False,False,mg/kg,37.556296296296296,1.1292380820891106,-0.40961281298218455
+2,Outlet,Pre-Storm,Soil,Nickel (Ni),46.6,mg/kg,False,46.6,False,False,mg/kg,26.315185185185186,1.770840663748575,0.23947190676042154
+2,Outlet,Pre-Storm,Soil,Chromium (Cr),54.25,mg/kg,False,54.25,False,False,mg/kg,37.556296296296296,1.4444981361314373,-0.05439415835941494
+2,Outlet,During-Storm,Sediment,Nickel (Ni),154.75,mg/kg,False,154.75,False,False,mg/kg,26.315185185185186,5.880635036804549,1.9710094562077685
+2,Outlet,During-Storm,Sediment,Chromium (Cr),220.98,mg/kg,False,220.98,False,False,mg/kg,37.556296296296296,5.883966785664977,1.9718266020422752
+2,Outlet,During-Storm,Soil,Nickel (Ni),234.26,mg/kg,False,234.26,False,False,mg/kg,26.315185185185186,8.90208441823479,2.5691806811734095
+2,Outlet,During-Storm,Soil,Chromium (Cr),345.12,mg/kg,False,345.12,False,False,mg/kg,37.556296296296296,9.189404548233762,2.615008880581835
+2,Outlet,During-Storm,Sediment,Nickel (Ni),174.2,mg/kg,False,174.2,False,False,mg/kg,26.315185185185186,6.619752009120209,2.141814670705006
+2,Outlet,During-Storm,Sediment,Chromium (Cr),229.38,mg/kg,False,229.38,False,False,mg/kg,37.556296296296296,6.107631013195006,2.0256504049771857
+2,Outlet,During-Storm,Soil,Nickel (Ni),239.69,mg/kg,False,239.69,False,False,mg/kg,26.315185185185186,9.108429156521371,2.6022397669719832
+2,Outlet,During-Storm,Soil,Chromium (Cr),363.16,mg/kg,False,363.16,False,False,mg/kg,37.556296296296296,9.669750103548255,2.6885161057306846
+2,Outlet,During-Storm,Sediment,Nickel (Ni),159.88,mg/kg,False,159.88,False,False,mg/kg,26.315185185185186,6.075579513307343,2.018059524639226
+2,Outlet,During-Storm,Sediment,Chromium (Cr),221.85,mg/kg,False,221.85,False,False,mg/kg,37.556296296296296,5.907132009230587,1.977495352128967
+2,Outlet,During-Storm,Soil,Nickel (Ni),247.87,mg/kg,False,247.87,False,False,mg/kg,26.315185185185186,9.419276294492688,2.6506537176672995
+2,Outlet,During-Storm,Soil,Chromium (Cr),355.96,mg/kg,False,355.96,False,False,mg/kg,37.556296296296296,9.478037908522515,2.6596259304886556
+2,Outlet,Post-Storm,Sediment,Nickel (Ni),62.89,mg/kg,False,62.89,False,False,mg/kg,26.315185185185186,2.3898748786083237,0.6719725874695823
+2,Outlet,Post-Storm,Sediment,Chromium (Cr),108.0,mg/kg,False,108.0,False,False,mg/kg,37.556296296296296,2.875682925386087,0.9389421113595744
+2,Outlet,Post-Storm,Soil,Nickel (Ni),105.84,mg/kg,False,105.84,False,False,mg/kg,26.315185185185186,4.022012357320798,1.4229550134974558
+2,Outlet,Post-Storm,Soil,Chromium (Cr),148.19,mg/kg,False,148.19,False,False,mg/kg,37.556296296296296,3.9458097473422615,1.3953588954865745
+2,Outlet,Post-Storm,Sediment,Nickel (Ni),67.78,mg/kg,False,67.78,False,False,mg/kg,26.315185185185186,2.575699145684086,0.7800015887027734
+2,Outlet,Post-Storm,Sediment,Chromium (Cr),114.05,mg/kg,False,114.05,False,False,mg/kg,37.556296296296296,3.036774422595215,1.0175772456208807
+2,Outlet,Post-Storm,Soil,Nickel (Ni),90.74,mg/kg,False,90.74,False,False,mg/kg,26.315185185185186,3.448199180870079,1.2008806115695232
+2,Outlet,Post-Storm,Soil,Chromium (Cr),148.12,mg/kg,False,148.12,False,False,mg/kg,37.556296296296296,3.9439458787795116,1.394677253593011
+2,Outlet,Post-Storm,Sediment,Nickel (Ni),65.32,mg/kg,False,65.32,False,False,mg/kg,26.315185185185186,2.482216999057015,0.7266667427804738
+2,Outlet,Post-Storm,Sediment,Chromium (Cr),90.64,mg/kg,False,90.64,False,False,mg/kg,37.556296296296296,2.413443521824027,0.6861305652418968
+2,Outlet,Post-Storm,Soil,Nickel (Ni),101.57,mg/kg,False,101.57,False,False,mg/kg,26.315185185185186,3.859748631264866,1.3635443933431275
+2,Outlet,Post-Storm,Soil,Chromium (Cr),133.3,mg/kg,False,133.3,False,False,mg/kg,37.556296296296296,3.549338277351532,1.2425875793977166
+3,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.59,mg/kg,False,7.59,False,False,mg/kg,26.315185185185186,0.28842662312986445,-2.378686257365755
+3,Station 00,Pre-Storm,Sediment,Chromium (Cr),10.0,mg/kg,False,10.0,False,False,mg/kg,37.556296296296296,0.2662669375357488,-2.494017295916532
+3,Station 00,Pre-Storm,Soil,Nickel (Ni),11.37,mg/kg,False,11.37,False,False,mg/kg,26.315185185185186,0.4320699216056072,-1.7956257938889733
+3,Station 00,Pre-Storm,Soil,Chromium (Cr),14.58,mg/kg,False,14.58,False,False,mg/kg,37.556296296296296,0.38821719492712176,-1.9500265762516817
+3,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.21,mg/kg,False,7.21,False,False,mg/kg,26.315185185185186,0.27398629153706494,-2.4527868835403983
+3,Station 00,Pre-Storm,Sediment,Chromium (Cr),12.63,mg/kg,False,12.63,False,False,mg/kg,37.556296296296296,0.33629514210765077,-2.1571626567910664
+3,Station 00,Pre-Storm,Soil,Nickel (Ni),11.62,mg/kg,False,11.62,False,False,mg/kg,26.315185185185186,0.4415701397587648,-1.7642479793766923
+3,Station 00,Pre-Storm,Soil,Chromium (Cr),12.68,mg/kg,False,12.68,False,False,mg/kg,37.556296296296296,0.3376264767953295,-2.151462550439212
+3,Station 00,Pre-Storm,Sediment,Nickel (Ni),7.35,mg/kg,False,7.35,False,False,mg/kg,26.315185185185186,0.27930641370283316,-2.4250418930574944
+3,Station 00,Pre-Storm,Sediment,Chromium (Cr),12.61,mg/kg,False,12.61,False,False,mg/kg,37.556296296296296,0.33576260823257925,-2.159449020250399
+3,Station 00,Pre-Storm,Soil,Nickel (Ni),11.01,mg/kg,False,11.01,False,False,mg/kg,26.315185185185186,0.41838960746506026,-1.8420435792168521
+3,Station 00,Pre-Storm,Soil,Chromium (Cr),13.2,mg/kg,False,13.2,False,False,mg/kg,37.556296296296296,0.3514723575471884,-2.093479366332803
+3,Station 00,During-Storm,Sediment,Nickel (Ni),42.72,mg/kg,False,42.72,False,False,mg/kg,26.315185185185186,1.623397278011569,0.11405359890633292
+3,Station 00,During-Storm,Sediment,Chromium (Cr),59.99,mg/kg,False,59.99,False,False,mg/kg,37.556296296296296,1.5973353582769572,0.09070473559148515
+3,Station 00,During-Storm,Soil,Nickel (Ni),56.25,mg/kg,False,56.25,False,False,mg/kg,26.315185185185186,2.137549084460458,0.5109950482105408
+3,Station 00,During-Storm,Soil,Chromium (Cr),85.11,mg/kg,False,85.11,False,False,mg/kg,37.556296296296296,2.266197905366758,0.5953113554168961
+3,Station 00,During-Storm,Sediment,Nickel (Ni),43.37,mg/kg,False,43.37,False,False,mg/kg,26.315185185185186,1.6480978452097788,0.13583939508188192
+3,Station 00,During-Storm,Sediment,Chromium (Cr),65.99,mg/kg,False,65.99,False,False,mg/kg,37.556296296296296,1.7570955207984063,0.22823012183531538
+3,Station 00,During-Storm,Soil,Nickel (Ni),61.44,mg/kg,False,61.44,False,False,mg/kg,26.315185185185186,2.334773613320009,0.6383201679399351
+3,Station 00,During-Storm,Soil,Chromium (Cr),89.51,mg/kg,False,89.51,False,False,mg/kg,37.556296296296296,2.3833553578824875,0.6680315724323627
+3,Station 00,During-Storm,Sediment,Nickel (Ni),40.66,mg/kg,False,40.66,False,False,mg/kg,26.315185185185186,1.5451154804295504,0.042752167063511176
+3,Station 00,During-Storm,Sediment,Chromium (Cr),64.34,mg/kg,False,64.34,False,False,mg/kg,37.556296296296296,1.713161476105008,0.19169864007411952
+3,Station 00,During-Storm,Soil,Nickel (Ni),56.84,mg/kg,False,56.84,False,False,mg/kg,26.315185185185186,2.15996959930191,0.5260485064615594
+3,Station 00,During-Storm,Soil,Chromium (Cr),72.8,mg/kg,False,72.8,False,False,mg/kg,37.556296296296296,1.9384233052602513,0.3699211545074396
+3,Station 00,Post-Storm,Sediment,Nickel (Ni),15.13,mg/kg,False,15.13,False,False,mg/kg,26.315185185185186,0.5749532026290974,-1.3834460605644838
+3,Station 00,Post-Storm,Sediment,Chromium (Cr),27.25,mg/kg,False,27.25,False,False,mg/kg,37.556296296296296,0.7255774047849155,-1.047761066026968
+3,Station 00,Post-Storm,Soil,Nickel (Ni),25.17,mg/kg,False,25.17,False,False,mg/kg,26.315185185185186,0.9564819636599063,-0.6491528316202415
+3,Station 00,Post-Storm,Soil,Chromium (Cr),27.82,mg/kg,False,27.82,False,False,mg/kg,37.556296296296296,0.7407546202244532,-1.0178948760363797
+3,Station 00,Post-Storm,Sediment,Nickel (Ni),15.9,mg/kg,False,15.9,False,False,mg/kg,26.315185185185186,0.6042138745408228,-1.311831282609503
+3,Station 00,Post-Storm,Sediment,Chromium (Cr),26.33,mg/kg,False,26.33,False,False,mg/kg,37.556296296296296,0.7010808465316266,-1.0973097745325562
+3,Station 00,Post-Storm,Soil,Nickel (Ni),22.5,mg/kg,False,22.5,False,False,mg/kg,26.315185185185186,0.8550196337841832,-0.8109330466768215
+3,Station 00,Post-Storm,Soil,Chromium (Cr),35.92,mg/kg,False,35.92,False,False,mg/kg,37.556296296296296,0.9564308396284098,-0.649229945837472
+3,Station 00,Post-Storm,Sediment,Nickel (Ni),16.04,mg/kg,False,16.04,False,False,mg/kg,26.315185185185186,0.609533996706591,-1.2991839063263007
+3,Station 00,Post-Storm,Sediment,Chromium (Cr),26.36,mg/kg,False,26.36,False,False,mg/kg,37.556296296296296,0.7018796473442338,-1.0956669255705673
+3,Station 00,Post-Storm,Soil,Nickel (Ni),26.64,mg/kg,False,26.64,False,False,mg/kg,26.315185185185186,1.012343246400473,-0.5672639657099587
+3,Station 00,Post-Storm,Soil,Chromium (Cr),29.58,mg/kg,False,29.58,False,False,mg/kg,37.556296296296296,0.787617601230745,-0.9293952434795514
+3,Source,Pre-Storm,Sediment,Nickel (Ni),91.15,mg/kg,False,91.15,False,False,mg/kg,26.315185185185186,3.463779538641258,1.2073846081452757
+3,Source,Pre-Storm,Sediment,Chromium (Cr),131.98,mg/kg,False,131.98,False,False,mg/kg,37.556296296296296,3.5141910415968125,1.2282301218353153
+3,Source,Pre-Storm,Soil,Nickel (Ni),140.67,mg/kg,False,140.67,False,False,mg/kg,26.315185185185186,5.345582750418712,1.8333847316607557
+3,Source,Pre-Storm,Soil,Chromium (Cr),150.33,mg/kg,False,150.33,False,False,mg/kg,37.556296296296296,4.002790871974912,1.416043742572115
+3,Source,Pre-Storm,Sediment,Nickel (Ni),86.52,mg/kg,False,86.52,False,False,mg/kg,26.315185185185186,3.287835498444779,1.1321756171807575
+3,Source,Pre-Storm,Sediment,Chromium (Cr),132.97,mg/kg,False,132.97,False,False,mg/kg,37.556296296296296,3.540551468412852,1.239011588056244
+3,Source,Pre-Storm,Soil,Nickel (Ni),137.67,mg/kg,False,137.67,False,False,mg/kg,26.315185185185186,5.231580132580822,1.8022842593522075
+3,Source,Pre-Storm,Soil,Chromium (Cr),173.27,mg/kg,False,173.27,False,False,mg/kg,37.556296296296296,4.6136072266819195,1.6209326866031442
+3,Source,Pre-Storm,Sediment,Nickel (Ni),88.1,mg/kg,False,88.1,False,False,mg/kg,26.315185185185186,3.3478768771727347,1.158283971026555
+3,Source,Pre-Storm,Sediment,Chromium (Cr),142.32,mg/kg,False,142.32,False,False,mg/kg,37.556296296296296,3.7895110550087767,1.3370492146885407
+3,Source,Pre-Storm,Soil,Nickel (Ni),140.15,mg/kg,False,140.15,False,False,mg/kg,26.315185185185186,5.325822296660146,1.8280417911386353
+3,Source,Pre-Storm,Soil,Chromium (Cr),151.71,mg/kg,False,151.71,False,False,mg/kg,37.556296296296296,4.039535709354845,1.4292269832698212
+3,Source,During-Storm,Sediment,Nickel (Ni),509.47,mg/kg,False,509.47,False,False,mg/kg,26.315185185185186,19.360304569956792,3.690067242962081
+3,Source,During-Storm,Sediment,Chromium (Cr),776.97,mg/kg,False,776.97,False,False,mg/kg,37.556296296296296,20.688142245715074,3.785769694017219
+3,Source,During-Storm,Soil,Nickel (Ni),706.21,mg/kg,False,706.21,False,False,mg/kg,26.315185185185186,26.83659624776569,4.161167296707805
+3,Source,During-Storm,Soil,Chromium (Cr),1034.89,mg/kg,False,1034.89,False,False,mg/kg,37.556296296296296,27.55569909863711,4.1993163235265225
+3,Source,During-Storm,Sediment,Nickel (Ni),498.96,mg/kg,False,498.96,False,False,mg/kg,26.315185185185186,18.960915398798043,3.6599942107983052
+3,Source,During-Storm,Sediment,Chromium (Cr),822.91,mg/kg,False,822.91,False,False,mg/kg,37.556296296296296,21.911372556754305,3.8686454536107693
+3,Source,During-Storm,Soil,Nickel (Ni),759.66,mg/kg,False,759.66,False,False,mg/kg,26.315185185185186,28.86774288891078,4.2664239047094625
+3,Source,During-Storm,Soil,Chromium (Cr),935.49,mg/kg,False,935.49,False,False,mg/kg,37.556296296296296,24.909005739531764,4.053633030707849
+3,Source,During-Storm,Sediment,Nickel (Ni),455.1,mg/kg,False,455.1,False,False,mg/kg,26.315185185185186,17.29419712600808,3.527253633074331
+3,Source,During-Storm,Sediment,Chromium (Cr),812.34,mg/kg,False,812.34,False,False,mg/kg,37.556296296296296,21.62992840377902,3.8499944840761806
+3,Source,During-Storm,Soil,Nickel (Ni),778.98,mg/kg,False,778.98,False,False,mg/kg,26.315185185185186,29.601919747786802,4.302656334912399
+3,Source,During-Storm,Soil,Chromium (Cr),908.23,mg/kg,False,908.23,False,False,mg/kg,37.556296296296296,24.183162067809313,4.010968490584881
+3,Source,Post-Storm,Sediment,Nickel (Ni),209.09,mg/kg,False,209.09,False,False,mg/kg,26.315185185185186,7.945602454574883,2.4051941115871736
+3,Source,Post-Storm,Sediment,Chromium (Cr),317.8,mg/kg,False,317.8,False,False,mg/kg,37.556296296296296,8.461963274886097,2.4960299236572627
+3,Source,Post-Storm,Soil,Nickel (Ni),319.01,mg/kg,False,319.01,False,False,mg/kg,26.315185185185186,12.122658372155211,3.0146716955993944
+3,Source,Post-Storm,Soil,Chromium (Cr),438.09,mg/kg,False,438.09,False,False,mg/kg,37.556296296296296,11.664888266503619,2.9591380825313403
+3,Source,Post-Storm,Sediment,Nickel (Ni),181.88,mg/kg,False,181.88,False,False,mg/kg,26.315185185185186,6.91159871078521,2.2040569559633187
+3,Source,Post-Storm,Sediment,Chromium (Cr),293.12,mg/kg,False,293.12,False,False,mg/kg,37.556296296296296,7.804816473047869,2.379402207518325
+3,Source,Post-Storm,Soil,Nickel (Ni),309.69,mg/kg,False,309.69,False,False,mg/kg,26.315185185185186,11.768490239405496,2.9718948453980727
+3,Source,Post-Storm,Soil,Chromium (Cr),377.19,mg/kg,False,377.19,False,False,mg/kg,37.556296296296296,10.04332261691091,2.743202226994313
+3,Source,Post-Storm,Sediment,Nickel (Ni),183.63,mg/kg,False,183.63,False,False,mg/kg,26.315185185185186,6.978100237857314,2.217871820746499
+3,Source,Post-Storm,Sediment,Chromium (Cr),314.92,mg/kg,False,314.92,False,False,mg/kg,37.556296296296296,8.385278396875801,2.482896182308138
+3,Source,Post-Storm,Soil,Nickel (Ni),316.34,mg/kg,False,316.34,False,False,mg/kg,26.315185185185186,12.021196042279488,3.0025460375050237
+3,Source,Post-Storm,Soil,Chromium (Cr),376.15,mg/kg,False,376.15,False,False,mg/kg,37.556296296296296,10.01563085540719,2.739218889336157
+3,Near-Field,Pre-Storm,Sediment,Nickel (Ni),66.43,mg/kg,False,66.43,False,False,mg/kg,26.315185185185186,2.5243979676570354,0.7509768662974926
+3,Near-Field,Pre-Storm,Sediment,Chromium (Cr),111.47,mg/kg,False,111.47,False,False,mg/kg,37.556296296296296,2.9680775527109917,0.9845662878176901
+3,Near-Field,Pre-Storm,Soil,Nickel (Ni),93.65,mg/kg,False,93.65,False,False,mg/kg,26.315185185185186,3.5587817201728336,1.2464209463491869
+3,Near-Field,Pre-Storm,Soil,Chromium (Cr),123.11,mg/kg,False,123.11,False,False,mg/kg,37.556296296296296,3.2780122680026036,1.1278587530308584
+3,Near-Field,Pre-Storm,Sediment,Nickel (Ni),67.65,mg/kg,False,67.65,False,False,mg/kg,26.315185185185186,2.5707590322444442,0.7772318860826787
+3,Near-Field,Pre-Storm,Sediment,Chromium (Cr),111.17,mg/kg,False,111.17,False,False,mg/kg,37.556296296296296,2.9600895445849194,0.9806783182325994
+3,Near-Field,Pre-Storm,Soil,Nickel (Ni),102.17,mg/kg,False,102.17,False,False,mg/kg,26.315185185185186,3.8825491548324442,1.372041689180304
+3,Near-Field,Pre-Storm,Soil,Chromium (Cr),139.44,mg/kg,False,139.44,False,False,mg/kg,37.556296296296296,3.7128261769984814,1.3075552735470661
+3,Near-Field,Pre-Storm,Sediment,Nickel (Ni),62.81,mg/kg,False,62.81,False,False,mg/kg,26.315185185185186,2.386834808799313,0.6701362212189191
+3,Near-Field,Pre-Storm,Sediment,Chromium (Cr),92.92,mg/kg,False,92.92,False,False,mg/kg,37.556296296296296,2.474152383582178,0.7219718582301886
+3,Near-Field,Pre-Storm,Soil,Nickel (Ni),102.78,mg/kg,False,102.78,False,False,mg/kg,26.315185185185186,3.905729687126149,1.3806296040239343
+3,Near-Field,Pre-Storm,Soil,Chromium (Cr),107.01,mg/kg,False,107.01,False,False,mg/kg,37.556296296296296,2.8493224985700483,0.9256564206093494
+3,Near-Field,During-Storm,Sediment,Nickel (Ni),374.25,mg/kg,False,374.25,False,False,mg/kg,26.315185185185186,14.221826575276914,3.2450723630519205
+3,Near-Field,During-Storm,Sediment,Chromium (Cr),507.34,mg/kg,False,507.34,False,False,mg/kg,37.556296296296296,13.508786808938678,3.170863709738837
+3,Near-Field,During-Storm,Soil,Nickel (Ni),566.26,mg/kg,False,566.26,False,False,mg/kg,26.315185185185186,21.518374125628068,3.842534669760249
+3,Near-Field,During-Storm,Soil,Chromium (Cr),750.78,mg/kg,False,750.78,False,False,mg/kg,37.556296296296296,19.990789136308948,3.736301017752919
+3,Near-Field,During-Storm,Sediment,Nickel (Ni),335.94,mg/kg,False,335.94,False,False,mg/kg,26.315185185185186,12.766013145487044,3.0892736326529278
+3,Near-Field,During-Storm,Sediment,Chromium (Cr),463.4,mg/kg,False,463.4,False,False,mg/kg,37.556296296296296,12.338809885406599,3.040168843173565
+3,Near-Field,During-Storm,Soil,Nickel (Ni),500.96,mg/kg,False,500.96,False,False,mg/kg,26.315185185185186,19.036917144023306,3.665765460357449
+3,Near-Field,During-Storm,Soil,Chromium (Cr),660.62,mg/kg,False,660.62,False,False,mg/kg,37.556296296296296,17.590126427486638,3.551731446257065
+3,Near-Field,During-Storm,Sediment,Nickel (Ni),326.96,mg/kg,False,326.96,False,False,mg/kg,26.315185185185186,12.424765309425622,3.0501841952394377
+3,Near-Field,During-Storm,Sediment,Chromium (Cr),542.48,mg/kg,False,542.48,False,False,mg/kg,37.556296296296296,14.444448827439302,3.2674807486335697
+3,Near-Field,During-Storm,Soil,Nickel (Ni),543.02,mg/kg,False,543.02,False,False,mg/kg,26.315185185185186,20.635233846110538,3.782075381758181
+3,Near-Field,During-Storm,Soil,Chromium (Cr),704.7,mg/kg,False,704.7,False,False,mg/kg,37.556296296296296,18.76383108814422,3.6449200130420962
+3,Near-Field,Post-Storm,Sediment,Nickel (Ni),150.17,mg/kg,False,150.17,False,False,mg/kg,26.315185185185186,5.706591040238701,1.9276666760376946
+3,Near-Field,Post-Storm,Sediment,Chromium (Cr),218.29,mg/kg,False,218.29,False,False,mg/kg,37.556296296296296,5.81234097946786,1.954156840060608
+3,Near-Field,Post-Storm,Soil,Nickel (Ni),215.11,mg/kg,False,215.11,False,False,mg/kg,26.315185185185186,8.174367707702919,2.4461446408693455
+3,Near-Field,Post-Storm,Soil,Chromium (Cr),316.29,mg/kg,False,316.29,False,False,mg/kg,37.556296296296296,8.4217569673182,2.4891587425009023
+3,Near-Field,Post-Storm,Sediment,Nickel (Ni),148.16,mg/kg,False,148.16,False,False,mg/kg,26.315185185185186,5.6302092862873145,1.9082260504790154
+3,Near-Field,Post-Storm,Sediment,Chromium (Cr),217.45,mg/kg,False,217.45,False,False,mg/kg,37.556296296296296,5.789974556714857,1.9485945077728115
+3,Near-Field,Post-Storm,Soil,Nickel (Ni),221.13,mg/kg,False,221.13,False,False,mg/kg,26.315185185185186,8.403132960830952,2.485964811023256
+3,Near-Field,Post-Storm,Soil,Chromium (Cr),309.44,mg/kg,False,309.44,False,False,mg/kg,37.556296296296296,8.239364115106211,2.4575704988982223
+3,Near-Field,Post-Storm,Sediment,Nickel (Ni),146.7,mg/kg,False,146.7,False,False,mg/kg,26.315185185185186,5.574728012272874,1.8939389177795312
+3,Near-Field,Post-Storm,Sediment,Chromium (Cr),236.26,mg/kg,False,236.26,False,False,mg/kg,37.556296296296296,6.290822666219601,2.0682861934689227
+3,Near-Field,Post-Storm,Soil,Nickel (Ni),205.69,mg/kg,False,205.69,False,False,mg/kg,26.315185185185186,7.816399487691939,2.381541703046731
+3,Near-Field,Post-Storm,Soil,Chromium (Cr),240.47,mg/kg,False,240.47,False,False,mg/kg,37.556296296296296,6.402921046922152,2.093767719781613
+3,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),41.46,mg/kg,False,41.46,False,False,mg/kg,26.315185185185186,1.575516178519655,0.07086206832819382
+3,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),63.28,mg/kg,False,63.28,False,False,mg/kg,37.556296296296296,1.6849371807262186,0.16773230389417285
+3,Mid-Field,Pre-Storm,Soil,Nickel (Ni),63.5,mg/kg,False,63.5,False,False,mg/kg,26.315185185185186,2.413055410902028,0.6858985437656696
+3,Mid-Field,Pre-Storm,Soil,Chromium (Cr),88.42,mg/kg,False,88.42,False,False,mg/kg,37.556296296296296,2.354332261691091,0.6503554383754474
+3,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),39.55,mg/kg,False,39.55,False,False,mg/kg,26.315185185185186,1.5029345118295308,0.0028196465789331712
+3,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),78.27,mg/kg,False,78.27,False,False,mg/kg,37.556296296296296,2.084071320092306,0.47444214895998926
+3,Mid-Field,Pre-Storm,Soil,Nickel (Ni),58.52,mg/kg,False,58.52,False,False,mg/kg,26.315185185185186,2.223811065291129,0.5680717213572659
+3,Mid-Field,Pre-Storm,Soil,Chromium (Cr),97.28,mg/kg,False,97.28,False,False,mg/kg,37.556296296296296,2.5902447683477643,0.7881259328649666
+3,Mid-Field,Pre-Storm,Sediment,Nickel (Ni),45.67,mg/kg,False,45.67,False,False,mg/kg,26.315185185185186,1.7354998522188287,0.21038874159713322
+3,Mid-Field,Pre-Storm,Sediment,Chromium (Cr),71.76,mg/kg,False,71.76,False,False,mg/kg,37.556296296296296,1.9107315437565335,0.34916259434064234
+3,Mid-Field,Pre-Storm,Soil,Nickel (Ni),67.47,mg/kg,False,67.47,False,False,mg/kg,26.315185185185186,2.5639188751741706,0.7733881137177521
+3,Mid-Field,Pre-Storm,Soil,Chromium (Cr),75.97,mg/kg,False,75.97,False,False,mg/kg,37.556296296296296,2.0228299244590837,0.4314125253272101
+3,Mid-Field,During-Storm,Sediment,Nickel (Ni),258.59,mg/kg,False,258.59,False,False,mg/kg,26.315185185185186,9.826645648900085,2.711736532166359
+3,Mid-Field,During-Storm,Sediment,Chromium (Cr),432.09,mg/kg,False,432.09,False,False,mg/kg,37.556296296296296,11.50512810398217,2.939242641522288
+3,Mid-Field,During-Storm,Soil,Nickel (Ni),374.55,mg/kg,False,374.55,False,False,mg/kg,26.315185185185186,14.233226837060704,3.24622836875551
+3,Mid-Field,During-Storm,Soil,Chromium (Cr),518.7,mg/kg,False,518.7,False,False,mg/kg,37.556296296296296,13.811266049979292,3.2028111686721816
+3,Mid-Field,During-Storm,Sediment,Nickel (Ni),242.91,mg/kg,False,242.91,False,False,mg/kg,26.315185185185186,9.230791966334042,2.621491930127943
+3,Mid-Field,During-Storm,Sediment,Chromium (Cr),379.24,mg/kg,False,379.24,False,False,mg/kg,37.556296296296296,10.097907339105738,2.751021938202227
+3,Mid-Field,During-Storm,Soil,Nickel (Ni),358.03,mg/kg,False,358.03,False,False,mg/kg,26.315185185185186,13.605452421500047,3.181150525425035
+3,Mid-Field,During-Storm,Soil,Chromium (Cr),495.15,mg/kg,False,495.15,False,False,mg/kg,37.556296296296296,13.184207412082602,3.1357764382524356
+3,Mid-Field,During-Storm,Sediment,Nickel (Ni),220.93,mg/kg,False,220.93,False,False,mg/kg,26.315185185185186,8.395532786308426,2.4846593817699203
+3,Mid-Field,During-Storm,Sediment,Chromium (Cr),366.81,mg/kg,False,366.81,False,False,mg/kg,37.556296296296296,9.766937535748802,2.7029437692935274
+3,Mid-Field,During-Storm,Soil,Nickel (Ni),341.26,mg/kg,False,341.26,False,False,mg/kg,26.315185185185186,12.968177787786237,3.1119413689590454
+3,Mid-Field,During-Storm,Soil,Chromium (Cr),500.08,mg/kg,False,500.08,False,False,mg/kg,37.556296296296296,13.315477012287726,3.150069706600208
+3,Mid-Field,Post-Storm,Sediment,Nickel (Ni),103.24,mg/kg,False,103.24,False,False,mg/kg,26.315185185185186,3.9232100885279584,1.387072093312749
+3,Mid-Field,Post-Storm,Sediment,Chromium (Cr),147.96,mg/kg,False,147.96,False,False,mg/kg,37.556296296296296,3.9396856077789395,1.3931180045453764
+3,Mid-Field,Post-Storm,Soil,Nickel (Ni),152.33,mg/kg,False,152.33,False,False,mg/kg,26.315185185185186,5.7886729250819835,1.948270142165745
+3,Mid-Field,Post-Storm,Soil,Chromium (Cr),170.42,mg/kg,False,170.42,False,False,mg/kg,37.556296296296296,4.537721149484231,1.597005455001989
+3,Mid-Field,Post-Storm,Sediment,Nickel (Ni),103.6,mg/kg,False,103.6,False,False,mg/kg,26.315185185185186,3.936890402668505,1.392094049792695
+3,Mid-Field,Post-Storm,Sediment,Chromium (Cr),136.29,mg/kg,False,136.29,False,False,mg/kg,37.556296296296296,3.62895209167472,1.2745905101992798
+3,Mid-Field,Post-Storm,Soil,Nickel (Ni),146.43,mg/kg,False,146.43,False,False,mg/kg,26.315185185185186,5.564467776667464,1.8912812043336193
+3,Mid-Field,Post-Storm,Soil,Chromium (Cr),215.59,mg/kg,False,215.59,False,False,mg/kg,37.556296296296296,5.740448906333208,1.9362010601549593
+3,Mid-Field,Post-Storm,Sediment,Nickel (Ni),104.07,mg/kg,False,104.07,False,False,mg/kg,26.315185185185186,3.9547508127964415,1.3986242932263175
+3,Mid-Field,Post-Storm,Sediment,Chromium (Cr),141.48,mg/kg,False,141.48,False,False,mg/kg,37.556296296296296,3.767144632255774,1.3285089231222997
+3,Mid-Field,Post-Storm,Soil,Nickel (Ni),133.37,mg/kg,False,133.37,False,False,mg/kg,26.315185185185186,5.068176380346512,1.7565042326414095
+3,Mid-Field,Post-Storm,Soil,Chromium (Cr),170.19,mg/kg,False,170.19,False,False,mg/kg,37.556296296296296,4.531597009920909,1.5950570688134549
+3,Outlet,Pre-Storm,Sediment,Nickel (Ni),30.99,mg/kg,False,30.99,False,False,mg/kg,26.315185185185186,1.1776470422654148,-0.34905529319500533
+3,Outlet,Pre-Storm,Sediment,Chromium (Cr),49.08,mg/kg,False,49.08,False,False,mg/kg,37.556296296296296,1.3068381294254552,-0.19888204691571398
+3,Outlet,Pre-Storm,Soil,Nickel (Ni),46.6,mg/kg,False,46.6,False,False,mg/kg,26.315185185185186,1.770840663748575,0.23947190676042154
+3,Outlet,Pre-Storm,Soil,Chromium (Cr),64.99,mg/kg,False,64.99,False,False,mg/kg,37.556296296296296,1.7304688270448314,0.20620045206628107
+3,Outlet,Pre-Storm,Sediment,Nickel (Ni),31.41,mg/kg,False,31.41,False,False,mg/kg,26.315185185185186,1.1936074087627198,-0.32963410512925634
+3,Outlet,Pre-Storm,Sediment,Chromium (Cr),45.79,mg/kg,False,45.79,False,False,mg/kg,37.556296296296296,1.2192363069761938,-0.2989847309050719
+3,Outlet,Pre-Storm,Soil,Nickel (Ni),40.96,mg/kg,False,40.96,False,False,mg/kg,26.315185185185186,1.5565157422133398,0.05335766721877899
+3,Outlet,Pre-Storm,Soil,Chromium (Cr),65.18,mg/kg,False,65.18,False,False,mg/kg,37.556296296296296,1.735527898858011,0.21041205615994532
+3,Outlet,Pre-Storm,Sediment,Nickel (Ni),31.27,mg/kg,False,31.27,False,False,mg/kg,26.315185185185186,1.1882872865969514,-0.3360788288561807
+3,Outlet,Pre-Storm,Sediment,Chromium (Cr),48.94,mg/kg,False,48.94,False,False,mg/kg,37.556296296296296,1.3031103922999545,-0.20300319449922935
+3,Outlet,Pre-Storm,Soil,Nickel (Ni),44.11,mg/kg,False,44.11,False,False,mg/kg,26.315185185185186,1.6762184909431252,0.1602477123109965
+3,Outlet,Pre-Storm,Soil,Chromium (Cr),57.37,mg/kg,False,57.37,False,False,mg/kg,37.556296296296296,1.5275734206425908,0.02627922207334985
+3,Outlet,During-Storm,Sediment,Nickel (Ni),165.96,mg/kg,False,165.96,False,False,mg/kg,26.315185185185186,6.306624818792136,2.0719056090904293
+3,Outlet,During-Storm,Sediment,Chromium (Cr),255.41,mg/kg,False,255.41,False,False,mg/kg,37.556296296296296,6.80072385160056,2.180725810573636
+3,Outlet,During-Storm,Soil,Nickel (Ni),250.26,mg/kg,False,250.26,False,False,mg/kg,26.315185185185186,9.510098380036874,2.664497764829161
+3,Outlet,During-Storm,Soil,Chromium (Cr),361.19,mg/kg,False,361.19,False,False,mg/kg,37.556296296296296,9.61729551685371,2.6806687495135186
+3,Outlet,During-Storm,Sediment,Nickel (Ni),169.47,mg/kg,False,169.47,False,False,mg/kg,26.315185185185186,6.440007881662468,2.1020999532753195
+3,Outlet,During-Storm,Sediment,Chromium (Cr),254.8,mg/kg,False,254.8,False,False,mg/kg,37.556296296296296,6.78448156841088,2.1772760765650436
+3,Outlet,During-Storm,Soil,Nickel (Ni),227.54,mg/kg,False,227.54,False,False,mg/kg,26.315185185185186,8.646718554277912,2.5271902304488667
+3,Outlet,During-Storm,Soil,Chromium (Cr),344.69,mg/kg,False,344.69,False,False,mg/kg,37.556296296296296,9.177955069919726,2.6132102434268654
+3,Outlet,During-Storm,Sediment,Nickel (Ni),143.23,mg/kg,False,143.23,False,False,mg/kg,26.315185185185186,5.442864984307047,1.8594037482967316
+3,Outlet,During-Storm,Sediment,Chromium (Cr),251.33,mg/kg,False,251.33,False,False,mg/kg,37.556296296296296,6.692086941085975,2.157493687730246
+3,Outlet,During-Storm,Soil,Nickel (Ni),216.75,mg/kg,False,216.75,False,False,mg/kg,26.315185185185186,8.23668913878763,2.4571020402153385
+3,Outlet,During-Storm,Soil,Chromium (Cr),316.45,mg/kg,False,316.45,False,False,mg/kg,37.556296296296296,8.42601723831877,2.489888366711359
+3,Outlet,Post-Storm,Sediment,Nickel (Ni),71.27,mg/kg,False,71.27,False,False,mg/kg,26.315185185185186,2.708322191102166,0.8524368762477854
+3,Outlet,Post-Storm,Sediment,Chromium (Cr),110.07,mg/kg,False,110.07,False,False,mg/kg,37.556296296296296,2.9308001814559868,0.9663321093910799
+3,Outlet,Post-Storm,Soil,Nickel (Ni),94.99,mg/kg,False,94.99,False,False,mg/kg,26.315185185185186,3.609702889473758,1.2669175946952371
+3,Outlet,Post-Storm,Soil,Chromium (Cr),141.06,mg/kg,False,141.06,False,False,mg/kg,37.556296296296296,3.755961420879273,1.3242197437955585
+3,Outlet,Post-Storm,Sediment,Nickel (Ni),68.38,mg/kg,False,68.38,False,False,mg/kg,26.315185185185186,2.598499669251664,0.7927163746521735
+3,Outlet,Post-Storm,Sediment,Chromium (Cr),108.61,mg/kg,False,108.61,False,False,mg/kg,37.556296296296296,2.891925208575768,0.9470677408444624
+3,Outlet,Post-Storm,Soil,Nickel (Ni),102.74,mg/kg,False,102.74,False,False,mg/kg,26.315185185185186,3.904209652221643,1.3800680255657383
+3,Outlet,Post-Storm,Soil,Chromium (Cr),125.3,mg/kg,False,125.3,False,False,mg/kg,37.556296296296296,3.3363247273229324,1.1532972136306037
+3,Outlet,Post-Storm,Sediment,Nickel (Ni),67.92,mg/kg,False,67.92,False,False,mg/kg,26.315185185185186,2.5810192678498542,0.7829784107718176
+3,Outlet,Post-Storm,Sediment,Chromium (Cr),113.26,mg/kg,False,113.26,False,False,mg/kg,37.556296296296296,3.0157393345298913,1.0075492339089627
+3,Outlet,Post-Storm,Soil,Nickel (Ni),105.02,mg/kg,False,105.02,False,False,mg/kg,26.315185185185186,3.9908516417784408,1.4117341475470178
+3,Outlet,Post-Storm,Soil,Chromium (Cr),148.76,mg/kg,False,148.76,False,False,mg/kg,37.556296296296296,3.960986962781799,1.4008974520333686

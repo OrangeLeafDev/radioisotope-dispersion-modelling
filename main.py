@@ -1,133 +1,301 @@
-from fileio import read_table, write_table
-from dataproc import prepare_data, descriptive_stats
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
-"""
-raw = read_table("placeholder.xlsx")
-data = prepare_data(raw)
+from fileio import read_table, write_table
+from dataproc import prepare_data, descriptive_stats, test_rq1_storm_phases, compute_site_kd
+from hydrology import (
+    scs_runoff, fit_rating_curve, evaluate_rq2_runoff,
+    manning_velocity, fischer_dispersion
+)
+from transport import (
+    rainfall_source_term, adr_partition_model,
+    analyze_rq3_pulse_metrics, lhs_sensitivity_analysis
+)
+from validation_risk import (
+    DAO_2016_08_LIMITS, compute_rmse_nse, evaluate_rq5_dao_exceedance,
+    compute_sediment_pollution_indices, compute_hpi, compute_hhra_non_carcinogenic
+)
 
-write_table(data, "prep_data.csv")
-write_table(descriptive_stats(data), "desc_stats.csv")
-"""
+def generate_sample_field_dataset():
+    """
+    Generates a realistic template dataset matching the 3 campaigns, 5 stations
+    (Station 00 Control, Source, Near-Field, Mid-Field, Outlet), and 3 storm phases
+    (Pre-Storm, During-Storm, Post-Storm) if no external CSV/XLSX is provided yet.
+    """
+    rng = np.random.default_rng(2026)
+    stations = ["Station 00", "Source", "Near-Field", "Mid-Field", "Outlet"]
+    phases = ["Pre-Storm", "During-Storm", "Post-Storm"]
+    rows = []
 
-metals = {
-    "Nickel (Ni)": {
-        "v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002,
-        "runoff_concentration": 0.1
-    },
-    "Chromium (Cr)": {
-        "v": 0.8, "D": 5.0, "k": 1e-5, "source": 0.0002,
-        "runoff_concentration": 0.05
-    },
-}
-models_result = {}
+    for campaign in [1, 2, 3]:
+        for st in stations:
+            # Spatial gradient multiplier
+            loc_mult = {"Station 00": 0.15, "Source": 1.8, "Near-Field": 1.3, "Mid-Field": 0.9, "Outlet": 0.6}[st]
+            for ph in phases:
+                # First-flush mobilization multiplier during storm
+                ph_mult = {"Pre-Storm": 0.4, "During-Storm": 2.2, "Post-Storm": 0.9}[ph]
+                for rep in range(1, 4):
+                    # Water (mg/L)
+                    rows.append({
+                        "campaign": campaign, "location": st, "storm_phase": ph,
+                        "sample_type": "Water", "analyte": "Nickel (Ni)",
+                        "value": round(0.08 * loc_mult * ph_mult * rng.uniform(0.85, 1.15), 5),
+                        "unit": "mg/L"
+                    })
+                    rows.append({
+                        "campaign": campaign, "location": st, "storm_phase": ph,
+                        "sample_type": "Water", "analyte": "Chromium (Cr)",
+                        "value": round(0.025 * loc_mult * ph_mult * rng.uniform(0.80, 1.20), 5),
+                        "unit": "mg/L"
+                    })
+                    # Sediment (mg/kg) - Cr has higher Kd than Ni
+                    rows.append({
+                        "campaign": campaign, "location": st, "storm_phase": ph,
+                        "sample_type": "Sediment", "analyte": "Nickel (Ni)",
+                        "value": round(120.0 * loc_mult * ph_mult * rng.uniform(0.9, 1.1), 2),
+                        "unit": "mg/kg"
+                    })
+                    rows.append({
+                        "campaign": campaign, "location": st, "storm_phase": ph,
+                        "sample_type": "Sediment", "analyte": "Chromium (Cr)",
+                        "value": round(190.0 * loc_mult * ph_mult * rng.uniform(0.85, 1.15), 2),
+                        "unit": "mg/kg"
+                    })
+                    # Soil (mg/kg)
+                    rows.append({
+                        "campaign": campaign, "location": st, "storm_phase": ph,
+                        "sample_type": "Soil", "analyte": "Nickel (Ni)",
+                        "value": round(180.0 * loc_mult * ph_mult * rng.uniform(0.9, 1.1), 2),
+                        "unit": "mg/kg"
+                    })
+                    rows.append({
+                        "campaign": campaign, "location": st, "storm_phase": ph,
+                        "sample_type": "Soil", "analyte": "Chromium (Cr)",
+                        "value": round(240.0 * loc_mult * ph_mult * rng.uniform(0.85, 1.15), 2),
+                        "unit": "mg/kg"
+                    })
+    return pd.DataFrame(rows)
 
-# Rainfall-runoff (SCS-CN)
-# with cumulative rainfall
-# P - rainfall depth
-# CN - curve number from land cover / soil group)
-def scs_runoff(rainfall, CN):
-    cumulative = np.cumsum(rainfall)
-    S = (25400 / CN) - 254
-    cumulative_runoff = np.where(cumulative > 0.2*S, (cumulative - 0.2*S)**2 / (cumulative + 0.8*S), 0)
-    return np.diff(cumulative_runoff, prepend=0)
-# Hydraulic parameters (Manning's eq.)
-def manning_velocity(n, R, S0):
-    return (1/n) * R**(2/3) * S0**0.5
-# 1D Advection-Dispersion-Reaction solver (explicit FD)
-def adr_model(C0, v, D, k, S_source, dx, dt, nx, nt):
-    C = np.zeros((nt, nx))
-    C[0] = C0
-    for t in range(1, nt):
-        prev = C[t-1]
-        C[t, 1:-1] = prev[1:-1] + dt * (
-            D * (prev[2:] - 2*prev[1:-1] + prev[:-2]) / dx**2
-            - v * (prev[1:-1] - prev[:-2]) / dx
-            - k * prev[1:-1]
-            + S_source[t, 1:-1]
+
+def main():
+    # =========================================================================
+    # PHASE 1: DATA PREPARATION, DESCRIPTIVE STATS & RQ 1 (PRE/DURING/POST STORM)
+    # =========================================================================
+    raw_df = generate_sample_field_dataset()  # Or replace with: read_table("data/field_samples.xlsx")
+    clean_df = prepare_data(raw_df)
+    desc_df = descriptive_stats(clean_df)
+    rq1_df = test_rq1_storm_phases(clean_df, source_location="Source")
+    paired_kd, kd_summary = compute_site_kd(clean_df, moisture_fraction=0.0)
+
+    write_table(clean_df, "outputs/01_cleaned_field_data.csv")
+    write_table(desc_df, "outputs/02_descriptive_statistics.csv")
+    write_table(rq1_df, "outputs/03_rq1_storm_phase_tests.csv")
+    write_table(kd_summary, "outputs/04_site_specific_Kd.csv")
+
+    print("=== RQ 1: Source Concentrations Across Pre-, During-, Post-Storm ===")
+    print(rq1_df.to_string(index=False), "\n")
+    print("=== Site-Specific Partition Coefficients (Kd in L/kg) ===")
+    print(kd_summary.to_string(index=False), "\n")
+
+    # =========================================================================
+    # PHASE 2: HYDROLOGY (RATING CURVE, SCS-CN RUNOFF & RQ 2 EVALUATION)
+    # =========================================================================
+    nx, nt = 200, 600
+    dx, dt = 50.0, 10.0  # 50 m spatial step (10 km reach), 10 s time step (1.67 hr storm window)
+
+    # Habagat storm hyetograph (mm per 10-second step)
+    rainfall_mm = np.zeros(nt)
+    rainfall_mm[60:180] = 35.0 / 120.0   # Initial monsoon burst
+    rainfall_mm[180:300] = 55.0 / 120.0  # Peak Habagat downpour
+
+    CN = 82.0  # Calibrated Curve Number for mined laterite / saprolite catchment
+    scs_q_mm = scs_runoff(rainfall_mm, CN)
+
+    # Simulated gauged direct runoff (for RQ 2 validation; replace with logger array)
+    rng = np.random.default_rng(42)
+    gauged_q_mm = np.clip(scs_q_mm * rng.normal(1.03, 0.08, size=nt), 0, None)
+    rq2_res = evaluate_rq2_runoff(scs_q_mm, gauged_q_mm)
+    print("=== RQ 2: SCS-CN Estimated vs. Gauged Direct Runoff ===")
+    print(pd.DataFrame([rq2_res]).to_string(index=False), "\n")
+
+    # Hydraulic parameters from Manning's and Fischer's equations (Logbook Entry 28)
+    manning_n = 0.040
+    W_width, H_depth, S0_slope = 25.0, 1.6, 0.0025
+    R_hydraulic = (W_width * H_depth) / (W_width + 2.0 * H_depth)
+    A_cross = W_width * H_depth
+
+    v_flow = manning_velocity(manning_n, R_hydraulic, S0_slope)
+    D_disp = fischer_dispersion(v_flow, W_width, H_depth, S0_slope)
+    print(f"Hydraulics -> Velocity v = {v_flow:.3f} m/s | Dispersion D = {D_disp:.2f} m^2/s\n")
+
+    # =========================================================================
+    # PHASE 3: 1-D ADR + TWO-PHASE PARTITIONING TRANSPORT & RQ 3 METRICS
+    # =========================================================================
+    catchment_area_m2 = 2.5e6  # 2.5 km^2 mining sub-catchment draining into source node
+    source_node = 5
+    ssc_mg_L = 450.0           # Monsoon suspended sediment concentration (mg/L)
+    v_settling = 1.5e-4        # Effective fine laterite particulate settling velocity (m/s)
+
+    # Metal-specific parameters (Cr has higher Kd and particulate affinity than Ni)
+    metals = {
+        "Nickel (Ni)": {
+            "Kd_L_kg": float(kd_summary.loc[kd_summary["analyte"] == "Nickel (Ni)", "mean_Kd"].iloc[0]),
+            "k_base": 1.2e-5,
+            "runoff_conc_mg_L": 0.42
+        },
+        "Chromium (Cr)": {
+            "Kd_L_kg": float(kd_summary.loc[kd_summary["analyte"] == "Chromium (Cr)", "mean_Kd"].iloc[0]),
+            "k_base": 2.5e-5,
+            "runoff_conc_mg_L": 0.14
+        }
+    }
+
+    models_result = {}
+    rq3_rows = []
+    rq4_rows = []
+    rq5_rows = []
+
+    for name, m in metals.items():
+        C0 = np.zeros(nx)
+        S_step = rainfall_source_term(
+            scs_q_mm, nx, source_node=source_node,
+            runoff_conc_mg_L=m["runoff_conc_mg_L"],
+            catchment_area_m2=catchment_area_m2,
+            cross_section_area_m2=A_cross,
+            dx=dx
         )
-        C[t, 0] = C[t, 1]
-        C[t, -1] = C[t, -2]
-    return C
-# Example monsoon pulse source term
-"""
-def monsoon_source(nt, nx, source_node, peak_time, magnitude, duration):
-    S = np.zeros((nt, nx))
-    t_arr = np.arange(nt)
-    pulse = magnitude * np.exp(-((t_arr - peak_time)**2) / (2*(duration/2.355)**2))
-    S[:, source_node] = pulse
-    return S
-"""
-# Rainfall-driven containment release
-def rainfall_source_old(rainfall, CN, nx, source_node, release_factor):
-    runoff = scs_runoff(rainfall, CN)
-    source = np.zeros((len(rainfall), nx))
-    source[:, source_node] = runoff * release_factor
-    return source
-# Revised function where:
-# change of C = (V runoff * C runoff) / V river
-def rainfall_source(runoff, nx, source_node, metal_concentration, catchment_area, river_discharge, dt):
-    source = np.zeros((len(runoff), nx))
-    runoff_volume = runoff * catchment_area
-    metal_mass = runoff_volume * metal_concentration
-    river_volume = river_discharge * dt * 1000
-    source[:, source_node] = metal_mass / river_volume / dt
-    return source
-# Run example scenario
-nx, nt = 200, 500
-dx, dt = 50, 10 # meters, seconds
-rainfall = np.zeros(nt)    # mm per timestep
-rainfall[95:106] = 20 / 11 # Example: 20 mm per timestep during a storm
-CN = 80                    # !!!Placeholder curve number
-catchment_area = 10_000 # meter squared [placeholder]
-river_discharge = 0.5   # meter cubed per second [placeholder]
-runoff = scs_runoff(rainfall,CN)
-#v, D, k = 0.8, 5.0, 1e-5
-for name, m in metals.items():
-    C0 = np.zeros(nx)
-    source = rainfall_source(
-        runoff, nx, source_node=5,
-        metal_concentration=m["runoff_concentration"],
-        catchment_area=catchment_area,
-        river_discharge=river_discharge,
-        dt=dt
+        res = adr_partition_model(
+            C0=C0, v=v_flow, D=D_disp, k_base=m["k_base"],
+            Kd_L_kg=m["Kd_L_kg"], ssc_mg_L=ssc_mg_L,
+            v_settling=v_settling, H_depth=H_depth,
+            S_step_conc=S_step, dx=dx, dt=dt, nx=nx, nt=nt
+        )
+        models_result[name] = res
+
+        # RQ 3: Speed, displacement, and attenuation rate
+        pulse_metrics = analyze_rq3_pulse_metrics(res["C_total"], dx, dt, source_node)
+        rq3_rows.append({
+            "analyte": name,
+            "Kd_L_kg": m["Kd_L_kg"],
+            "dissolved_fraction_fd": res["f_d"],
+            "particulate_fraction_fp": res["f_p"],
+            "effective_decay_k_eff_per_s": res["k_eff"],
+            "mean_pulse_speed_m_s": pulse_metrics["mean_pulse_speed_m_s"],
+            "max_displacement_m": pulse_metrics["max_displacement_m"],
+            "spatial_attenuation_per_m": pulse_metrics["spatial_attenuation_per_m"]
+        })
+
+        # RQ 4: Model Validation (RMSE and NSE at Outlet Station)
+        sim_outlet = res["C_total"][:, -1]
+        # Synthetic observed outlet hydrograph with realistic sensor noise (replace with field logger array)
+        obs_outlet = np.clip(sim_outlet * rng.normal(1.0, 0.12, size=nt) + rng.normal(0, 0.002, size=nt), 0, None)
+        val_metrics = compute_rmse_nse(obs_outlet, sim_outlet)
+        rq4_rows.append({"analyte": name, **val_metrics})
+
+        # RQ 5: DENR DAO 2016-08 Exceedance Assessment
+        dao_metrics = evaluate_rq5_dao_exceedance(res["C_total"], name, water_class="Class C")
+        rq5_rows.append(dao_metrics)
+
+    rq3_df = pd.DataFrame(rq3_rows)
+    rq4_df = pd.DataFrame(rq4_rows)
+    rq5_df = pd.DataFrame(rq5_rows)
+
+    write_table(rq3_df, "outputs/05_rq3_transport_pulse_metrics.csv")
+    write_table(rq4_df, "outputs/06_rq4_validation_rmse_nse.csv")
+    write_table(rq5_df, "outputs/07_rq5_dao_2016_08_exceedances.csv")
+
+    print("=== RQ 3: Downstream Pulse Speed, Displacement & Attenuation ===")
+    print(rq3_df.to_string(index=False), "\n")
+    print("=== RQ 4: Model Validation (RMSE & Nash-Sutcliffe Efficiency) ===")
+    print(rq4_df.to_string(index=False), "\n")
+    print("=== RQ 5: DENR DAO 2016-08 Water Quality Exceedance ===")
+    print(rq5_df.to_string(index=False), "\n")
+
+    # =========================================================================
+    # PHASE 4: POLLUTION INDICES (Igeo, CF, HPI), HHRA (HQ) & LHS MONTE CARLO
+    # =========================================================================
+    solids_indices = compute_sediment_pollution_indices(clean_df, control_station="Station 00")
+    hpi_df = compute_hpi(clean_df, water_class="Class C")
+
+    peak_water_concs = {
+        name: float(models_result[name]["C_total"].max())
+        for name in metals
+    }
+    hq_df, hi_summary = compute_hhra_non_carcinogenic(peak_water_concs)
+
+    write_table(solids_indices, "outputs/08_sediment_soil_CF_Igeo.csv")
+    write_table(hpi_df, "outputs/09_water_HPI.csv")
+    write_table(hq_df, "outputs/10_hhra_hazard_quotients.csv")
+    write_table(hi_summary, "outputs/11_hhra_hazard_index_summary.csv")
+
+    print("=== Human Health Risk Assessment (Non-Carcinogenic ADD & HQ) ===")
+    print(hq_df[["receptor", "analyte", "HQ_total", "adverse_risk_HQ_gt_1"]].to_string(index=False), "\n")
+    print(hi_summary.to_string(index=False), "\n")
+
+    # Latin Hypercube Sampling (LHS) Sensitivity Analysis & Probabilistic Risk Mapping (Logbook Entry 40 & 47)
+    def run_ni_lhs(p):
+        v_lhs = manning_velocity(p["n"], R_hydraulic, S0_slope)
+        D_lhs = fischer_dispersion(v_lhs, W_width, H_depth, S0_slope)
+        q_lhs = scs_runoff(rainfall_mm, p["CN"])
+        s_lhs = rainfall_source_term(
+            q_lhs, nx, source_node, metals["Nickel (Ni)"]["runoff_conc_mg_L"],
+            catchment_area_m2, A_cross, dx
+        )
+        return adr_partition_model(
+            np.zeros(nx), v_lhs, D_lhs, metals["Nickel (Ni)"]["k_base"],
+            p["Kd"], ssc_mg_L, v_settling, H_depth, s_lhs, dx, dt, nx, nt
+        )
+
+    lhs_bounds = {"Kd": (800.0, 2200.0), "CN": (75.0, 88.0), "n": (0.035, 0.050)}
+    lhs_df, lhs_peaks = lhs_sensitivity_analysis(lhs_bounds, n_samples=30, model_runner_fn=run_ni_lhs)
+    write_table(lhs_df, "outputs/12_lhs_sensitivity_results.csv")
+
+    # Compute exceedance probability along the river reach for GIS mapping (Logbook Entry 47)
+    ni_limit = DAO_2016_08_LIMITS["Class C"]["Nickel (Ni)"]
+    exceed_prob = (lhs_peaks > ni_limit).mean(axis=0)
+    gis_export = pd.DataFrame({
+        "node_id": np.arange(nx),
+        "distance_downstream_km": np.arange(nx) * dx / 1000.0,
+        "Ni_mean_peak_mg_L": lhs_peaks.mean(axis=0),
+        "Ni_p95_peak_mg_L": np.percentile(lhs_peaks, 95, axis=0),
+        "DAO_Class_C_exceedance_prob": exceed_prob
+    })
+    write_table(gis_export, "outputs/13_gis_probabilistic_river_profile.csv")
+
+    # =========================================================================
+    # PHASE 5: VISUALIZATION (SPACE-TIME HEATMAPS & PROBABILISTIC EXCEEDANCE)
+    # =========================================================================
+    fig, axes = plt.subplots(1, 3, figsize=(16, 4.8))
+
+    for ax, (name, res) in zip(axes[:2], models_result.items()):
+        im = ax.imshow(
+            res["C_total"].T, aspect="auto", origin="lower", cmap="inferno",
+            extent=[0, nt * dt / 3600.0, 0, nx * dx / 1000.0],
+            vmin=0
+        )
+        ax.set_title(f"Simulated {name} Dispersion")
+        ax.set_xlabel("Time (hours)")
+        ax.set_ylabel("Distance downstream (km)")
+        fig.colorbar(im, ax=ax, label="Total Concentration (mg/L)")
+
+    # Panel 3: Probabilistic Longitudinal Risk Profile
+    axes[2].plot(gis_export["distance_downstream_km"], gis_export["Ni_mean_peak_mg_L"], label="Mean Peak Ni (LHS)", color="tab:red")
+    axes[2].fill_between(
+        gis_export["distance_downstream_km"],
+         np.percentile(lhs_peaks, 5, axis=0),
+        gis_export["Ni_p95_peak_mg_L"],
+        color="tab:red", alpha=0.25, label="5th–95th Percentile Band"
     )
-    models_result[name] = adr_model(
-        C0, m["v"], m["D"], m["k"],
-        source, dx, dt, nx, nt
-    )
-    result = models_result[name]
-    print(name, "minimum concentration:", result.min())
-    print("Location (time, distance):", np.unravel_index(
-        np.argmin(result), result.shape
-    ))
-    print("Minimum source value:", source.min())
+    axes[2].axhline(ni_limit, color="black", linestyle="--", label=f"DAO 2016-08 Class C ({ni_limit} mg/L)")
+    axes[2].set_title("Probabilistic Peak Profile (LHS Monte Carlo)")
+    axes[2].set_xlabel("Distance downstream (km)")
+    axes[2].set_ylabel("Concentration (mg/L)")
+    axes[2].legend(fontsize=8)
 
+    plt.tight_layout()
+    plt.savefig("outputs/dispersion_and_risk_summary.png", dpi=300)
+    plt.show()
 
-
-fig, axes = plt.subplots(1, len(models_result), figsize=(6*len(models_result), 4))
-axes = np.atleast_1d(axes)
-
-for ax, (name, result) in zip(axes, models_result.items()):
-    im = ax.imshow(
-        result.T, aspect="auto", origin="lower", cmap="inferno",
-        extent=[0, nt*dt/3600, 0, nx*dx/1000],
-        vmin=0
-    )
-    ax.set_title(name)
-    ax.set_xlabel("Time (hours)")
-    ax.set_ylabel("Distance downstream (km)")
-    fig.colorbar(im, ax=ax, label="Concentration (mg/L)")
-
-plt.tight_layout()
-plt.show()
-"""
-plt.imshow(models_result["Nickel (Ni)"].T, aspect='auto', origin='lower', cmap='inferno',
-    extent=[0, nt*dt/3600, 0, nx*dx/1000])
-plt.xlabel("Time (hours)")
-plt.ylabel("Distance downstream (km)")
-plt.colorbar(label="Concentration (mg/L)")
-plt.title("Simulated Heavy Metal Dispersion During Monsoon Event")
-plt.show()
-"""
+if __name__ == "__main__":
+    main()

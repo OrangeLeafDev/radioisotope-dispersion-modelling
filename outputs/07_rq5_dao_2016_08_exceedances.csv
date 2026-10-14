@@ -1,0 +1,3 @@
+analyte,water_class,dao_2016_08_limit_mg_L,simulated_domain_peak_mg_L,simulated_outlet_peak_mg_L,simulated_outlet_time_avg_mg_L,peak_exceedance_ratio,outlet_avg_exceedance_ratio,exceeds_criterion_H1
+Nickel (Ni),Class C,0.2,0.9129723584014703,0.0015008441199790162,4.212130726853193e-05,4.564861792007351,0.00021060653634265967,True
+Chromium (Cr),Class C,0.01,0.29984362404364673,0.0004049635598486716,1.143989527721165e-05,29.98436240436467,0.0011439895277211651,True

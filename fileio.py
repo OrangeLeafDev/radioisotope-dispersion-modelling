@@ -13,6 +13,7 @@ def read_table(path, **kw):
 
 def write_table(df, path):
     path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
     match path.suffix.lower():
         case ".csv":
             return df.to_csv(path, index=False)
