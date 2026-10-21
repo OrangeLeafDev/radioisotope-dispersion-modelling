@@ -1,139 +1,225 @@
+import re
 import numpy as np
 import pandas as pd
+from scipy import stats
 
-# DENR Administrative Order No. 2016-08 (DAO 2016-08) Water Quality Guidelines (mg/L)
-# Logbook Entry 44
-DAO_2016_08_LIMITS = {
-    "Class A": {"Nickel (Ni)": 0.02, "Chromium (Cr)": 0.01},
-    "Class B": {"Nickel (Ni)": 0.04, "Chromium (Cr)": 0.01},
-    "Class C": {"Nickel (Ni)": 0.20, "Chromium (Cr)": 0.01},
-    "Class D": {"Nickel (Ni)": 1.00, "Chromium (Cr)": 0.02},
+ALIASES = {
+    "sampleid": "sample_id",
+    "sampleno": "sample_id",
+    "site_id": "location",
+    "site": "location",
+    "sampletype": "sample_type",
+    "matrix": "sample_type",
+    "element": "analyte",
+    "parameter": "analyte",
+    "concentration": "value",
+    "activity": "value",
+    "measurement": "value",
+    "result": "value",
+    "units": "unit",
+    "sampling_date": "date",
+    "sample_location": "location",
+    "station": "location",
+    "sampling_season": "season",
+    "storm_phase": "storm_phase",
+    "phase": "storm_phase",
+    "campaign": "campaign",
+    "detectionlimit": "detection_limit",
 }
 
-def compute_rmse_nse(observed, simulated):
-    """
-    RQ 4 & Hypothesis 4 (Logbook Entry 41 & 42):
-    Calculate Root Mean Square Error (RMSE) and Nash-Sutcliffe Efficiency (NSE).
-    Acceptance criterion: NSE > 0.5.
-    """
-    obs = np.asarray(observed, dtype=float)
-    sim = np.asarray(simulated, dtype=float)
-    mask = ~np.isnan(obs) & ~np.isnan(sim)
-    obs, sim = obs[mask], sim[mask]
+# Maps wide-format columns from SantaCruz_NiCr_Synthetic_Dataset into (sample_type, analyte, unit)
+WIDE_MEASUREMENT_MAP = {
+    "water_ni_mg_l": ("Water", "Nickel (Ni)", "mg/L"),
+    "water_cr_mg_l": ("Water", "Chromium (Cr)", "mg/L"),
+    "sediment_ni_mg_kg_dw": ("Sediment", "Nickel (Ni)", "mg/kg"),
+    "sediment_cr_mg_kg_dw": ("Sediment", "Chromium (Cr)", "mg/kg"),
+    "sediment_ni_mg_kg": ("Sediment", "Nickel (Ni)", "mg/kg"),
+    "sediment_cr_mg_kg": ("Sediment", "Chromium (Cr)", "mg/kg"),
+    "soil_ni_mg_kg_dw": ("Soil", "Nickel (Ni)", "mg/kg"),
+    "soil_cr_mg_kg_dw": ("Soil", "Chromium (Cr)", "mg/kg"),
+    "soil_ni_mg_kg": ("Soil", "Nickel (Ni)", "mg/kg"),
+    "soil_cr_mg_kg": ("Soil", "Chromium (Cr)", "mg/kg"),
+}
 
-    rmse = float(np.sqrt(np.mean((sim - obs) ** 2)))
-    denom = np.sum((obs - np.mean(obs)) ** 2)
-    nse = float(1.0 - (np.sum((obs - sim) ** 2) / denom)) if denom > 0 else np.nan
-    return {
-        "RMSE": rmse,
-        "NSE": nse,
-        "acceptable_H1_NSE_gt_0_5": bool(nse > 0.5) if not np.isnan(nse) else False
+SITE_COORDS_DEFAULT = {
+    "s0": (120.025000, 15.699722),
+    "station 00": (120.025000, 15.699722),
+    "s1": (120.000000, 15.699444),
+    "source": (120.000000, 15.699444),
+    "near-field": (119.989000, 15.704200),
+    "s2": (119.964500, 15.713500),
+    "mid-field": (119.964500, 15.713500),
+    "lower reach": (119.937874, 15.719390),
+    "s3": (119.892000, 15.714300),
+    "outlet": (119.892000, 15.714300),
+}
+
+UNIT_FACTORS = {
+    "mg/l": (1.0, "mg/L"),
+    "ppm": (1.0, "mg/L"),
+    "ug/l": (1e-3, "mg/L"),
+    "µg/l": (1e-3, "mg/L"),
+    "ppb": (1e-3, "mg/L"),
+    "mg/kg": (1.0, "mg/kg"),
+    "mg/kg dw": (1.0, "mg/kg"),
+    "ug/kg": (1e-3, "mg/kg"),
+    "µg/kg": (1e-3, "mg/kg"),
+    "g/kg": (1e3, "mg/kg"),
+}
+
+def prepare_data(df):
+    """Clean column names, reshape wide format if detected, populate coordinates, and standardize units."""
+    df = df.copy()
+    df.columns = [
+        re.sub(r"_+", "_", re.sub(r"[^a-z0-9]+", "_", str(c).strip().lower())).strip("_")
+        for c in df.columns
+    ]
+    df = df.rename(columns={c: ALIASES[c] for c in df.columns if c in ALIASES})
+
+    # Automatically reshape wide-format spreadsheets/CSVs into long format
+    wide_cols = [c for c in df.columns if c in WIDE_MEASUREMENT_MAP]
+    if wide_cols:
+        id_vars = [c for c in df.columns if c not in wide_cols]
+        melted_parts = []
+        for col in wide_cols:
+            s_type, analyte_name, unit_str = WIDE_MEASUREMENT_MAP[col]
+            part = df[id_vars].copy()
+            part["sample_type"] = s_type
+            part["analyte"] = analyte_name
+            part["value"] = df[col]
+            part["unit"] = unit_str
+            melted_parts.append(part)
+        df = pd.concat(melted_parts, ignore_index=True)
+
+    if df.columns.duplicated().any():
+        raise ValueError("Multiple columns map to the same name; resolve them manually.")
+
+    # Auto-fill missing coordinates and campaign if absent
+    if "location" in df.columns:
+        loc_key = df["location"].astype(str).str.strip().str.lower()
+        if "longitude" not in df.columns:
+            df["longitude"] = loc_key.map(lambda k: SITE_COORDS_DEFAULT.get(k, (120.0, 15.7))[0])
+        if "latitude" not in df.columns:
+            df["latitude"] = loc_key.map(lambda k: SITE_COORDS_DEFAULT.get(k, (120.0, 15.7))[1])
+    if "campaign" not in df.columns:
+        df["campaign"] = 1
+
+    if "value" in df.columns:
+        raw = df["value"].astype("string").str.strip()
+        df["below_detection_limit"] = raw.str.match(r"^<\s*\d", na=False)
+        numeric = raw.str.extract(
+            r"^\s*<?\s*([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)",
+            expand=False
+        )
+        df["value_numeric"] = pd.to_numeric(numeric, errors="coerce")
+        if "detection_limit" in df.columns:
+            dl_num = pd.to_numeric(df["detection_limit"], errors="coerce")
+            df.loc[df["below_detection_limit"] & dl_num.notna(), "value_numeric"] = dl_num / 2.0
+        df["missing_value"] = raw.isna() | raw.eq("")
+
+    if "unit" in df.columns and "value_numeric" in df.columns:
+        unit_clean = df["unit"].astype(str).str.strip().str.lower()
+        factors = unit_clean.map(lambda u: UNIT_FACTORS.get(u, (1.0, u))[0])
+        std_units = unit_clean.map(lambda u: UNIT_FACTORS.get(u, (1.0, u))[1])
+        df["unit_converted_flag"] = factors != 1.0
+        df["value_numeric"] = df["value_numeric"] * factors
+        df["unit_standardized"] = std_units
+
+    return df
+
+def descriptive_stats(df):
+    """Calculate mean, median, std, min, max, Q1, Q3, and IQR across groups."""
+    if "value_numeric" not in df.columns:
+        raise ValueError("Expected value_numeric; call prepare_data() first.")
+    groups = [
+        c for c in ("analyte", "sample_type", "location", "storm_phase", "season")
+        if c in df.columns
+    ]
+    values = df.dropna(subset=["value_numeric"])
+    aggregation = {
+        "n": "count",
+        "mean": "mean",
+        "median": "median",
+        "std": "std",
+        "minimum": "min",
+        "maximum": "max",
+        "q1": lambda s: s.quantile(0.25),
+        "q3": lambda s: s.quantile(0.75),
     }
+    if groups:
+        out = values.groupby(groups, dropna=False)["value_numeric"].agg(
+            **aggregation
+        ).reset_index()
+    else:
+        out = pd.DataFrame([{
+            name: func(values["value_numeric"]) if callable(func) else getattr(values["value_numeric"], func)()
+            for name, func in aggregation.items()
+        }])
+    out["IQR"] = out["q3"] - out["q1"]
+    return out
 
-def evaluate_rq5_dao_exceedance(C_matrix, metal_name, water_class="Class C"):
+def test_rq1_storm_phases(df, source_location="S1"):
     """
-    RQ 5 & Hypothesis 5 (Logbook Entry 44):
-    Compare simulated peak and time-averaged concentrations against DENR DAO 2016-08.
+    RQ 1 & Hypothesis 1:
+    Test significant differences in Ni and Cr concentrations in surface water,
+    sediment, and soil at the source (S1 or Source) across pre-storm, during-storm, and post-storm.
     """
-    limit = DAO_2016_08_LIMITS[water_class][metal_name]
-    peak_per_node = C_matrix.max(axis=0)
-    mean_per_node = C_matrix.mean(axis=0)
+    sub = df.dropna(subset=["value_numeric"]).copy()
+    if "location" in sub.columns and source_location is not None:
+        loc_lower = sub["location"].astype(str).str.lower()
+        if (loc_lower == source_location.lower()).any():
+            sub = sub[loc_lower == source_location.lower()]
+        elif (loc_lower == "s1").any():
+            sub = sub[loc_lower == "s1"]
+        elif (loc_lower == "source").any():
+            sub = sub[loc_lower == "source"]
 
-    domain_peak = float(peak_per_node.max())
-    outlet_peak = float(peak_per_node[-1])
-    outlet_mean = float(mean_per_node[-1])
+    results = []
+    for (analyte, matrix), grp in sub.groupby(["analyte", "sample_type"]):
+        phases = [g["value_numeric"].values for _, g in grp.groupby("storm_phase") if len(g) > 0]
+        if len(phases) < 2:
+            continue
 
-    return {
-        "analyte": metal_name,
-        "water_class": water_class,
-        "dao_2016_08_limit_mg_L": limit,
-        "simulated_domain_peak_mg_L": domain_peak,
-        "simulated_outlet_peak_mg_L": outlet_peak,
-        "simulated_outlet_time_avg_mg_L": outlet_mean,
-        "peak_exceedance_ratio": domain_peak / limit,
-        "outlet_avg_exceedance_ratio": outlet_mean / limit,
-        "exceeds_criterion_H1": bool(domain_peak > limit or outlet_mean > limit)
-    }
+        normal = all(len(p) >= 3 and stats.shapiro(p).pvalue > 0.05 for p in phases)
+        homoscedastic = len(phases) >= 2 and stats.levene(*phases).pvalue > 0.05
 
-def compute_sediment_pollution_indices(df_solids, control_station="Station 00"):
+        if normal and homoscedastic:
+            stat_val, p_val = stats.f_oneway(*phases)
+            test_used = "One-Way ANOVA"
+        else:
+            stat_val, p_val = stats.kruskal(*phases)
+            test_used = "Kruskal-Wallis"
+
+        results.append({
+            "analyte": analyte,
+            "sample_type": matrix,
+            "test_used": test_used,
+            "statistic": stat_val,
+            "p_value": p_val,
+            "significant_H1": p_val < 0.05
+        })
+    return pd.DataFrame(results)
+
+def compute_site_kd(df, moisture_fraction=0.0):
     """
-    Logbook Entry 43:
-    Compute Contamination Factor (CF) and Geoaccumulation Index (Igeo)
-    using local Station 00 (upstream control) background concentrations:
-    CF = C_sample / C_background
-    Igeo = log2(C_sample / (1.5 * C_background))
+    Calculate site-specific partition coefficient Kd = Cs (mg/kg dry) / Cw (mg/L)
+    from paired surface water and sediment concentrations (paired by trial, phase, and site).
     """
-    solids = df_solids[df_solids["sample_type"].str.lower().isin(["sediment", "soil"])].copy()
-    ctrl = solids[solids["location"].str.lower() == control_station.lower()]
-    bg_map = ctrl.groupby("analyte")["value_numeric"].mean().to_dict()
+    water = df[df["sample_type"].str.lower() == "water"].copy()
+    sed = df[df["sample_type"].str.lower() == "sediment"].copy()
 
-    solids["C_background"] = solids["analyte"].map(bg_map)
-    solids["CF"] = solids["value_numeric"] / solids["C_background"]
-    solids["Igeo"] = np.log2(solids["value_numeric"] / (1.5 * solids["C_background"]))
-    return solids
+    sed["Cs_dry"] = sed["value_numeric"] / (1.0 - moisture_fraction)
 
-def compute_hpi(df_water, water_class="Class C"):
-    """
-    Heavy Metal Pollution Index (HPI) for surface water:
-    Wi = 1 / Si, Qi = (Mi / Si) * 100, HPI = sum(Wi * Qi) / sum(Wi)
-    """
-    limits = DAO_2016_08_LIMITS[water_class]
-    water = df_water[df_water["sample_type"].str.lower() == "water"].copy()
-    water["Si"] = water["analyte"].map(limits)
-    water = water.dropna(subset=["Si", "value_numeric"])
-    water["Wi"] = 1.0 / water["Si"]
-    water["Qi"] = (water["value_numeric"] / water["Si"]) * 100.0
-    water["Wi_Qi"] = water["Wi"] * water["Qi"]
+    merge_cols = [c for c in ("analyte", "location", "storm_phase", "campaign", "trial") if c in df.columns]
+    paired = pd.merge(
+        sed[merge_cols + ["Cs_dry"]],
+        water[merge_cols + ["value_numeric"]].rename(columns={"value_numeric": "Cw"}),
+        on=merge_cols
+    )
+    paired = paired[paired["Cw"] > 0]
+    paired["Kd_L_per_kg"] = paired["Cs_dry"] / paired["Cw"]
 
-    hpi_df = water.groupby(["location", "storm_phase"], dropna=False).apply(
-        lambda g: pd.Series({"HPI": g["Wi_Qi"].sum() / g["Wi"].sum()}),
-        include_groups=False
+    summary = paired.groupby("analyte")["Kd_L_per_kg"].agg(
+        n="count", mean_Kd="mean", std_Kd="std", median_Kd="median"
     ).reset_index()
-    return hpi_df
-
-def compute_hhra_non_carcinogenic(Cw_mg_L):
-    """
-    Risk and Safety Section & Logbook Entry 45 & 46:
-    Calculate USEPA Non-Carcinogenic Average Daily Dose (ADD) and Hazard Quotient (HQ)
-    via ingestion and dermal absorption pathways for Adults and Children.
-    (Note: Cr6+ carcinogenic LADD is explicitly omitted per Logbook Entry 24 & 46
-    because only total Cr is measured without valence speciation.)
-    """
-    # Oral Reference Dose RfD_oral (mg/kg/day) - USEPA IRIS
-    rfd_oral = {"Nickel (Ni)": 0.02, "Chromium (Cr)": 1.5}  # Cr(III)/Total baseline RfD; (if conservative Cr: 0.003)
-    kp_dermal = {"Nickel (Ni)": 2e-4, "Chromium (Cr)": 1e-3}  # cm/hr
-
-    receptors = {
-        "Adult": {"IR_L_day": 2.0, "BW_kg": 60.0, "SA_cm2": 18000.0, "ET_hr_day": 1.0, "EF": 350.0, "ED": 30.0},
-        "Child": {"IR_L_day": 1.0, "BW_kg": 15.0, "SA_cm2": 6600.0,  "ET_hr_day": 1.0, "EF": 350.0, "ED": 6.0},
-    }
-
-    rows = []
-    for age_group, p in receptors.items():
-        AT = p["ED"] * 365.0
-        for metal, conc in Cw_mg_L.items():
-            # Ingestion ADD (mg/kg/day)
-            add_ing = (conc * p["IR_L_day"] * p["EF"] * p["ED"]) / (p["BW_kg"] * AT)
-            # Dermal ADD (mg/kg/day), 1e-3 L/cm^3 conversion
-            add_derm = (conc * p["SA_cm2"] * kp_dermal[metal] * p["ET_hr_day"] * 1e-3 * p["EF"] * p["ED"]) / (p["BW_kg"] * AT)
-
-            rfd = rfd_oral[metal]
-            hq_ing = add_ing / rfd
-            hq_derm = add_derm / (rfd * 0.05)  # Gastrointestinal absorption factor adjustment
-            hq_total = hq_ing + hq_derm
-
-            rows.append({
-                "receptor": age_group,
-                "analyte": metal,
-                "concentration_mg_L": conc,
-                "ADD_ingestion": add_ing,
-                "ADD_dermal": add_derm,
-                "HQ_total": hq_total,
-                "adverse_risk_HQ_gt_1": hq_total > 1.0
-            })
-
-    df_hq = pd.DataFrame(rows)
-    # Hazard Index (HI) = sum of HQs per receptor group
-    hi_summary = df_hq.groupby("receptor")["HQ_total"].sum().rename("Hazard_Index_HI").reset_index()
-    hi_summary["adverse_effect_HI_gt_1"] = hi_summary["Hazard_Index_HI"] > 1.0
-    return df_hq, hi_summary
+    return paired, summary

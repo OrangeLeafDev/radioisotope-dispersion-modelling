@@ -1,0 +1,28 @@
+Site ID,Site description,Storm phase,Trial,Water Ni (mg/L),Water Cr (mg/L),Sediment Ni (mg/kg dw),Sediment Cr (mg/kg dw),Soil Ni (mg/kg dw),Soil Cr (mg/kg dw),Data status,Longitude,Latitude,Campaign
+S1,Near source (mining-affected tributary / laterite exposure),Pre-storm,1,0.0238,0.0197,4583,7672,4502,5677,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),Pre-storm,2,0.0320,0.0192,5761,6487,3787,5759,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),Pre-storm,3,0.0287,0.0204,5324,7412,4234,5694,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),During storm,1,0.1906,0.1338,4298,5943,4051,5848,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),During storm,2,0.1858,0.1152,4901,7271,3992,5644,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),During storm,3,0.1691,0.1465,4739,7105,4032,6850,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),Post-storm,1,0.0743,0.0400,5061,7571,4343,6051,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),Post-storm,2,0.0686,0.0419,5216,6563,3895,5584,SYNTHETIC,120.000000,15.699444,1
+S1,Near source (mining-affected tributary / laterite exposure),Post-storm,3,0.0710,0.0423,4760,6540,4686,5340,SYNTHETIC,120.000000,15.699444,1
+S2,Mid-reach (main channel),Pre-storm,1,0.0180,0.0104,4664,6661,3348,5037,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),Pre-storm,2,0.0148,0.0094,5046,6494,3306,4731,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),Pre-storm,3,0.0149,0.0100,4324,6898,3383,5230,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),During storm,1,0.0707,0.0480,4228,6032,3239,4824,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),During storm,2,0.0851,0.0443,4452,6052,3350,4803,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),During storm,3,0.0591,0.0487,4322,6149,3744,4615,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),Post-storm,1,0.0313,0.0168,4859,5760,3214,4471,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),Post-storm,2,0.0328,0.0219,4887,6469,3625,4804,SYNTHETIC,119.964500,15.713500,1
+S2,Mid-reach (main channel),Post-storm,3,0.0274,0.0177,4880,7121,3678,5078,SYNTHETIC,119.964500,15.713500,1
+S3,Downstream (near river mouth / pond-like zone),Pre-storm,1,0.0066,0.0059,3604,4686,3020,4361,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),Pre-storm,2,0.0079,0.0063,3884,5344,2832,3796,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),Pre-storm,3,0.0082,0.0060,3777,5793,2860,4150,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),During storm,1,0.0253,0.0154,3984,5263,2947,4190,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),During storm,2,0.0244,0.0182,4282,4863,2826,4293,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),During storm,3,0.0233,0.0176,4260,5782,2797,4438,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),Post-storm,1,0.0134,0.0077,4174,6297,2801,3883,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),Post-storm,2,0.0120,0.0085,3929,6295,2627,4312,SYNTHETIC,119.892000,15.714300,1
+S3,Downstream (near river mouth / pond-like zone),Post-storm,3,0.0141,0.0100,4974,6079,2717,4012,SYNTHETIC,119.892000,15.714300,1
