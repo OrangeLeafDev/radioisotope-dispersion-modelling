@@ -1,0 +1,31 @@
+campaign,location,longitude,latitude,storm_phase,sample_type,analyte,value,unit,detection_limit
+1,Station 00,120.0120,15.7720,Pre-Storm,Water,Nickel (Ni),0.012,mg/L,0.005
+1,Station 00,120.0120,15.7720,Pre-Storm,Water,Chromium (Cr),0.004,mg/L,0.002
+1,Source,120.0210,15.7680,Pre-Storm,Water,Nickel (Ni),0.350,mg/L,0.005
+1,Source,120.0210,15.7680,Pre-Storm,Water,Chromium (Cr),0.110,mg/L,0.002
+1,Near-Field,120.0150,15.7650,Pre-Storm,Water,Nickel (Ni),0.210,mg/L,0.005
+1,Near-Field,120.0150,15.7650,Pre-Storm,Water,Chromium (Cr),0.075,mg/L,0.002
+1,Mid-Field,120.0080,15.7610,Pre-Storm,Water,Nickel (Ni),0.095,mg/L,0.005
+1,Mid-Field,120.0080,15.7610,Pre-Storm,Water,Chromium (Cr),0.030,mg/L,0.002
+1,Outlet,119.9950,15.7580,Pre-Storm,Water,Nickel (Ni),0.045,mg/L,0.005
+1,Outlet,119.9950,15.7580,Pre-Storm,Water,Chromium (Cr),0.015,mg/L,0.002
+2,Station 00,120.0120,15.7720,During-Storm,Water,Nickel (Ni),0.018,mg/L,0.005
+2,Station 00,120.0120,15.7720,During-Storm,Water,Chromium (Cr),0.006,mg/L,0.002
+2,Source,120.0210,15.7680,During-Storm,Water,Nickel (Ni),0.850,mg/L,0.005
+2,Source,120.0210,15.7680,During-Storm,Water,Chromium (Cr),0.280,mg/L,0.002
+2,Near-Field,120.0150,15.7650,During-Storm,Water,Nickel (Ni),0.540,mg/L,0.005
+2,Near-Field,120.0150,15.7650,During-Storm,Water,Chromium (Cr),0.190,mg/L,0.002
+2,Mid-Field,120.0080,15.7610,During-Storm,Water,Nickel (Ni),0.260,mg/L,0.005
+2,Mid-Field,120.0080,15.7610,During-Storm,Water,Chromium (Cr),0.085,mg/L,0.002
+2,Outlet,119.9950,15.7580,During-Storm,Water,Nickel (Ni),0.125,mg/L,0.005
+2,Outlet,119.9950,15.7580,During-Storm,Water,Chromium (Cr),0.042,mg/L,0.002
+3,Station 00,120.0120,15.7720,Post-Storm,Water,Nickel (Ni),0.014,mg/L,0.005
+3,Station 00,120.0120,15.7720,Post-Storm,Water,Chromium (Cr),0.005,mg/L,0.002
+3,Source,120.0210,15.7680,Post-Storm,Water,Nickel (Ni),0.420,mg/L,0.005
+3,Source,120.0210,15.7680,Post-Storm,Water,Chromium (Cr),0.140,mg/L,0.002
+3,Near-Field,120.0150,15.7650,Post-Storm,Water,Nickel (Ni),0.280,mg/L,0.005
+3,Near-Field,120.0150,15.7650,Post-Storm,Water,Chromium (Cr),0.095,mg/L,0.002
+3,Mid-Field,120.0080,15.7610,Post-Storm,Water,Nickel (Ni),0.130,mg/L,0.005
+3,Mid-Field,120.0080,15.7610,Post-Storm,Water,Chromium (Cr),0.045,mg/L,0.002
+3,Outlet,119.9950,15.7580,Post-Storm,Water,Nickel (Ni),0.060,mg/L,0.005
+3,Outlet,119.9950,15.7580,Post-Storm,Water,Chromium (Cr),0.020,mg/L,0.002

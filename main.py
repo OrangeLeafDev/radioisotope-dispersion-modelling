@@ -77,6 +77,33 @@ def generate_sample_field_dataset():
                     })
     return pd.DataFrame(rows)
 
+def export_chapter3_methodology_tables(kd_summary, v_flow, D_disp):
+    """
+    Dynamically extracts model parameters and station data straight from 
+    the active script run and writes them out for Chapter 3.
+    """
+    import pandas as pd
+    from pathlib import Path
+    Path("outputs").mkdir(exist_ok=True)
+
+    # 1. Dynamically extract Kd values calculated by the model
+    kd_ni = float(kd_summary.loc[kd_summary["analyte"] == "Nickel (Ni)", "mean_Kd"].iloc[0])
+    kd_cr = float(kd_summary.loc[kd_summary["analyte"] == "Chromium (Cr)", "mean_Kd"].iloc[0])
+
+    table2_dynamic = pd.DataFrame([
+        {"Parameter": "CN", "Description": "Curve Number", "Value": 82.0, "Basis": "Mined Laterite LULC Overlay"},
+        {"Parameter": "n", "Description": "Manning's Roughness", "Value": 0.040, "Basis": "Channel Geometry Calibration"},
+        {"Parameter": "v", "Description": "Mean Flow Velocity", "Value": round(v_flow, 3), "Basis": "Calculated via Manning's Equation"},
+        {"Parameter": "D", "Description": "Longitudinal Dispersion", "Value": round(D_disp, 2), "Basis": "Calculated via Fischer's Formula"},
+        {"Parameter": "Kd (Ni)", "Description": "Nickel Partition Coeff.", "Value": round(kd_ni, 1), "Basis": "Derived from Field Samples (dataproc.py)"},
+        {"Parameter": "Kd (Cr)", "Description": "Chromium Partition Coeff.", "Value": round(kd_cr, 1), "Basis": "Derived from Field Samples (dataproc.py)"},
+    ])
+    
+    table2_dynamic.to_csv("outputs/Chapter3_Model_Parameters_Dynamic.csv", index=False)
+    print("Successfully exported model-generated Chapter 3 parameters to outputs/Chapter3_Model_Parameters_Dynamic.csv")
+
+# Call this right after your model finishes running in main.py:
+# export_chapter3_methodology_tables(kd_summary, v_flow, D_disp)
 
 def main():
     # =========================================================================
@@ -295,6 +322,7 @@ def main():
 
     plt.tight_layout()
     plt.savefig("outputs/dispersion_and_risk_summary.png", dpi=300)
+    export_chapter3_methodology_tables(kd_summary, v_flow, D_disp)
     plt.show()
 
 if __name__ == "__main__":

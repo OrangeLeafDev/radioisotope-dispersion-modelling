@@ -1,0 +1,7 @@
+Parameter,Description,Value,Basis
+CN,Curve Number,82.0,Mined Laterite LULC Overlay
+n,Manning's Roughness,0.04,Channel Geometry Calibration
+v,Mean Flow Velocity,1.578,Calculated via Manning's Equation
+D,Longitudinal Dispersion,54.02,Calculated via Fischer's Formula
+Kd (Ni),Nickel Partition Coeff.,1537.7,Derived from Field Samples (dataproc.py)
+Kd (Cr),Chromium Partition Coeff.,7672.8,Derived from Field Samples (dataproc.py)
